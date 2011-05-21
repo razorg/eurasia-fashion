@@ -1,0 +1,26 @@
+application: eurasia-fashion
+version: 1
+runtime: python
+api_version: 1
+
+builtins:
+- appstats: on
+
+
+derived_file_type:
+- python_precompiled
+
+handlers:
+- url: /static/(.*)
+  static_files: static/\1
+  upload: static/(.*)
+  
+#- url: /google73a6e106114591c7.html
+#  static_dir: static
+
+#- url: /stats.*
+#  script: $PYTHON_LIB/google/appengine/ext/appstats/ui.py
+
+- url: /.*
+  script: main.py
+

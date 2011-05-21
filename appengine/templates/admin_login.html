@@ -1,0 +1,35 @@
+{% extends 'skeleton.html' %}
+
+{% block content %}
+
+<form class="span-19 last login" action="/loginBackend" method="post">
+    <fieldset>
+        <legend>{{ _('Admin Login') }}</legend>
+        {% if retry %}
+            <p class="error">
+                {{ _('Wrong credentials') }}
+            </p>
+        {% endif %}
+        {% if need %}
+            <p class="error">
+                {{ _('You need to be logged in to access this area') }}
+            </p>
+        {% endif %}
+        <p>
+            <label for="uid"> {{ _('Username') }}</label>
+            <input type="text" name="uid" id="uid">
+        </p>
+        <p>
+            <label for="passwd"> {{ _('Password') }}</label>
+            <input type="password" name="passwd" id="passwd">
+        </p>
+        <input type="hidden" name="onSucc" value="/admin">
+        <input type="hidden" name="onFail" value="/admin_login">
+        
+        <p>
+            <input type="submit" value="{{ _('Submit') }}">
+        </p>
+    </fieldset>
+</form>
+
+{% endblock %}

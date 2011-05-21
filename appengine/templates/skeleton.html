@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>{% block title %}Eurasia Fashion{% endblock %}</title>
+<meta charset="UTF-8">
+<link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+<link href='http://fonts.googleapis.com/css?family=Mako' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
+<link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection"> 
+<link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
+<link rel="stylesheet" href="/static/css/fashion.css" type="text/css">
+
+<script type="text/javascript" src="/static/js/jquery.js"></script>
+</head>
+<body>
+<div class="container">
+<div class="span-24 last" id="header">
+    <p class="span-24 last" id="logo_text"><img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">Eurasia's fashion industry</p>
+</div>
+<div class="span-24 last">
+{% block header_line %}{% endblock %}
+<div style="float:right">
+    <a href="/set_lang?lang=en_US">EN</a> |
+    <a href="/set_lang?lang=ru_RU">RU</a>
+</div>
+<hr>
+{{ papa }}
+<div class="span-5" id="col1">
+    {% block col1 %}
+    <ul class="vmenu">
+        <li><a href="/">{{ _('Homepage') }}</a></li>
+        <li><a href="/news">{{ _('News & Announcements') }}</a></li>
+        <li><a href="#">{{ _('Partners Profiles') }}</a></li>
+        <li><a href="#">{{ _('Contacts') }}</a></li>
+    </ul>
+    {% endblock %}
+</div>
+<div class="span-19 last" id="content">
+    {% block content %}
+    {% endblock %}
+</div>
+<hr>
+<div class="span-24 last" id="footer">
+    <div class="span-24 last">The contents of this website reflect the views of the author.
+    The European Commission is not responsible for any use that may be made thereof.</div>
+    <div class="span-24 last">EUROPEAN UNION, European Social Fund, Article 6, Innovative Measures.</div>
+    <div class="prepend-11 span-2 append-11 last"><img src="/static/images/fashion/eu.png" alt="Euriopean Union"></div>
+</div>
+</div>
+</body>

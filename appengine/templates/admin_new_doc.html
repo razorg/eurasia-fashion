@@ -1,0 +1,33 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+<p>
+    {% trans %}
+    Select the file you would like to upload.
+    After it is submitted, it will be visible to under the documents section
+    {% endtrans %}
+</p>
+<form enctype="multipart/form-data" class="span-19 last" action="/admin/documents/new" method="post">
+    <fieldset>
+        {% if no_title %}
+            <p class="error">A title is required to upload a document</p>
+        {% endif %}
+        {% if no_file %}
+            <p class="error">You have not specified a file to upload</p>
+        {% endif %}
+        <p>
+            <label class="span-19 last" for="title">{{ _('Document title') }}</label>
+            <input type="text" id="title" name="title">
+        </p>
+        <p>
+            <label class="span-19 last" for="desc">{{ _('Document description') }}</label>
+            <textarea id="desc" name="desc"></textarea>
+        </p>
+        <p>
+            <label class="span-19 last" for="file">{{ _('File') }}</label>
+            <input type="file" id="file" name="file">
+        </p>
+        <p><input type="submit" value="{{ _('Submit') }}"></p>
+    </fieldset>
+</form>
+{% endblock %}

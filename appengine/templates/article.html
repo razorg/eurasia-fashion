@@ -1,0 +1,6 @@
+{% extends 'skeleton.html' %}
+
+{% block content %}
+<h2 class="title">{{ article.title }}</h2>
+{{ article.article|nl2br }}
+{% endblock %}

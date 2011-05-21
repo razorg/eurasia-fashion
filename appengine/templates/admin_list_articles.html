@@ -1,0 +1,26 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+    {% if new %}
+        <p class="success"> {{_('You have added a new document') }}</p>
+    {% endif %}
+    {% if not articles %}
+        <p class="info">{{ _('There are no articles') }}</p>
+    {% else %}
+        <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th class="span-5 append-14 last">{{ _('Title') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for article in articles %}
+            <tr>
+                <td>{{ article.title }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    {% endif %}
+{% endblock %}
+

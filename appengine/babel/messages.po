@@ -1,0 +1,206 @@
+# Translations template for PROJECT.
+# Copyright (C) 2011 ORGANIZATION
+# This file is distributed under the same license as the PROJECT project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2011.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PROJECT VERSION\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2011-05-21 01:50+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 0.9.5\n"
+
+#: templates/admin.html:4
+msgid "Back to homepage"
+msgstr ""
+
+#: templates/admin_list_articles.html:5 templates/admin_list_doc.html:5
+msgid "You have added a new document"
+msgstr ""
+
+#: templates/admin_list_articles.html:8
+msgid "There are no articles"
+msgstr ""
+
+#: templates/admin_list_articles.html:13 templates/admin_list_doc.html:13
+msgid "Title"
+msgstr ""
+
+#: templates/admin_list_doc.html:8
+msgid "There are no uploaded documents"
+msgstr ""
+
+#: templates/admin_list_doc.html:14
+msgid "Description"
+msgstr ""
+
+#: templates/admin_list_doc.html:15 templates/admin_new_doc.html:27
+msgid "File"
+msgstr ""
+
+#: templates/admin_login.html:7
+msgid "Admin Login"
+msgstr ""
+
+#: templates/admin_login.html:10
+msgid "Wrong credentials"
+msgstr ""
+
+#: templates/admin_login.html:15
+msgid "You need to be logged in to access this area"
+msgstr ""
+
+#: templates/admin_login.html:19
+msgid "Username"
+msgstr ""
+
+#: templates/admin_login.html:23
+msgid "Password"
+msgstr ""
+
+#: templates/admin_login.html:30 templates/admin_new_article.html:26
+#: templates/admin_new_doc.html:30
+msgid "Submit"
+msgstr ""
+
+#: templates/admin_new_article.html:5
+msgid ""
+"\n"
+"    Add a new article with the form below.\n"
+"    The article will be shown at the homepage and News section.\n"
+"    "
+msgstr ""
+
+#: templates/admin_new_article.html:19
+msgid "Article title"
+msgstr ""
+
+#: templates/admin_new_article.html:23
+msgid "Article content"
+msgstr ""
+
+#: templates/admin_new_doc.html:5
+msgid ""
+"\n"
+"    Select the file you would like to upload.\n"
+"    After it is submitted, it will be visible to under the documents "
+"section\n"
+"    "
+msgstr ""
+
+#: templates/admin_new_doc.html:19
+msgid "Document title"
+msgstr ""
+
+#: templates/admin_new_doc.html:23
+msgid "Document description"
+msgstr ""
+
+#: templates/articles.html:5
+msgid "There are no articles available"
+msgstr ""
+
+#: templates/root.html:5
+msgid ""
+"\n"
+"Central Asia Invest (started in 2008) is an initiative within the "
+"European\n"
+"Commission’s overall strategy to support EU-Asian co-operation, designed "
+"to establish\n"
+"and consolidate bonds between European and Central Asian Business "
+"Intermediary\n"
+"Organizations (BIOs) in order to facilitate the transition towards a "
+"market economy.\n"
+"By developing Business Organizations, Central Asia Invest also aims at "
+"encouraging\n"
+"the establishment and/or internationalisation of existing Small and "
+"Medium Enterprises\n"
+"(SMEs).\n"
+msgstr ""
+
+#: templates/root.html:15
+msgid ""
+"\n"
+"Asia is a crucial partner for the EU, politically and economically and "
+"there is important\n"
+"scope for promoting the development of private sector by encouraging the "
+"growth and\n"
+"expansion of the small and medium enterprises. On the other hand, most "
+"Central\n"
+"Asian SMEs have fragmented knowledge of business sectoral knowledge, in "
+"particular\n"
+"of strategic marketing, appropriate marketing-mixes, access to "
+"information and\n"
+"capital. In conjunction with the sometimes low-level vocational "
+"education, these SMEs\n"
+"face difficulties to produce competitive quality and at the same time "
+"they remain\n"
+"geographically restricted.\n"
+msgstr ""
+
+#: templates/root.html:28
+msgid ""
+"\n"
+"In this context, Business Intermediary Organisations can play a key role "
+"in the reform\n"
+"process towards a market economy, contributing to civil society "
+"development and to\n"
+"the creation of new employment opportunities and income. By improving "
+"their\n"
+"capacity to assist small businesses and to create bridges between the "
+"governments\n"
+"and the private sector, they will contribute to the eradication of "
+"poverty and to the\n"
+"gradual democratic and economic transition of these countries. This is "
+"why the Central\n"
+"Asia Invest programme supports Business Intermediary Organisations.\n"
+msgstr ""
+
+#: templates/root.html:40
+msgid ""
+"\n"
+"The ultimate scope of the present project is to achieve productive "
+"entrepreneurship,\n"
+"which is crucial to local economic growth, employment creation, "
+"internationalisation\n"
+"and innovation. Improving entrepreneurial activity, through "
+"internationalisation of the\n"
+"textile / clothing / fashion sector, is expected to create jobs, drive "
+"efficient resource\n"
+"use and accelerate the process of generating, diffusing and applying "
+"innovative ideas\n"
+"and concepts, thus providing concrete and desired solutions for the "
+"Project targeted\n"
+"beneficiaries and the society at large.\n"
+msgstr ""
+
+#: templates/root.html:52
+msgid ""
+"\n"
+"To address the above challenges, the present Project focuses on "
+"developing specific\n"
+"mechanisms that will provide legal and institutional capacity building to"
+" the Central\n"
+"Asia Business Intermediary Organisations (BIOs) and SMEs, towards "
+"strengthening\n"
+"links between themselves, but also with the EU, encourage new flows of "
+"investment\n"
+"for the Central Asia Countries and create a public-private dialogue for "
+"strengthening\n"
+"the integration of SMEs into the networking mechanisms, thus aiming at "
+"generally\n"
+"improving the business environment.\n"
+msgstr ""
+
+#: templates/skeleton.html:30
+msgid "Homepage"
+msgstr ""
+
+
