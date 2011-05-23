@@ -1,56 +1,36 @@
-import os, sys, gettext
+# -*- coding: utf-8 -*-
+"""WSGI app setup."""
+import os
 
-if 'lib' not in sys.path:
-    sys.path[0:0] = ['lib']
+import set_sys_path
 
-from jinja2 import Environment, FileSystemLoader
-from gaesessions import get_current_session
+from tipfy.app import App
+from config import config
+from urls import rules
 
+def enable_appstats(app):
+    """Enables appstats middleware."""
+    from google.appengine.ext.appstats.recording import \
+        appstats_wsgi_middleware
+    app.dispatch = appstats_wsgi_middleware(app.dispatch)
 
-jinja_dirs = [os.path.join(os.path.dirname(__file__), 'templates')]
-jinja_env = Environment(loader=FileSystemLoader(jinja_dirs), extensions=['jinja2.ext.i18n'])
-_ = gettext.translation('messages', os.path.join(os.path.dirname(__file__), 'babel'), ['en_US', 'ru_RU'])
-_ = _.gettext
-jinja_env.install_gettext_callables(_, None)
-import re
+def enable_jinja2_debugging():
+    """Enables blacklisted modules that help Jinja2 debugging."""
+    if not debug:
+        return
+    from google.appengine.tools.dev_appserver import HardenedModulesHook
+    HardenedModulesHook._WHITE_LIST_C_MODULES += ['_ctypes', 'gestalt']
 
-from jinja2 import evalcontextfilter, Markup, escape
-_paragraph_re = re.compile(r'(?:\r\n|\r|\n){2,}')
-@evalcontextfilter
-def nl2br(eval_ctx, value):
-    result = u'\n\n'.join(u'%s<br>' % p.replace('\n', '<br>\n') \
-        for p in _paragraph_re.split(escape(value)))
-    if eval_ctx.autoescape:
-        result = Markup(result)
-    return result
+# Is this the development server?
+debug = os.environ.get('SERVER_SOFTWARE', '').startswith('Dev')
 
-jinja_env.filters['nl2br'] = nl2br
-    
-from google.appengine.ext import webapp
-from google.appengine.ext.webapp.util import run_wsgi_app
-from apps.fashion import handlers as fashion_handlers
-from apps.gaeauth import handlers as gaeauth_handlers
-rules = [
-  ('/', fashion_handlers.RootHandler),
-  ('/set_lang', fashion_handlers.SetLangHandler),
-  ('/news', fashion_handlers.NewsHandler),
-  ('/news/show', fashion_handlers.ShowArticleHandler),
-  ('/admin', fashion_handlers.AdminHandler),
-  ('/admin/documents/new', fashion_handlers.NewDocHandler),
-  ('/admin/articles/new', fashion_handlers.NewArticleHandler),
-  ('/admin/articles/show', fashion_handlers.ShowArticleHandler),
-  ('/admin/documents/list', fashion_handlers.ListDocsHandler),
-  ('/admin/articles/list', fashion_handlers.ListArticlesHandler),
-  ('/admin/documents/get', fashion_handlers.GetDocHandler),
-  ('/admin_login', fashion_handlers.AdminLoginHandler),
-  ('/loginBackend', gaeauth_handlers.LoginHandler),
-  ('/h4x0rz', gaeauth_handlers.RegAdmin)
-]
-app = webapp.WSGIApplication(rules, debug=True)
+# Instantiate the application.
+app = App(rules=rules, config=config, debug=debug)
+enable_appstats(app)
+enable_jinja2_debugging()
 
 def main():
-    run_wsgi_app(app)
-
+    app.run()
 
 if __name__ == '__main__':
     main()
