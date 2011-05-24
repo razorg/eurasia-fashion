@@ -1,0 +1,30 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+    {% if new %}
+        <p class="success"> {{_('You have added a new event') }}</p>
+    {% endif %}
+    {% if not events %}
+        <p class="info">{{ _('There are no events available') }}</p>
+    {% else %}
+        <table border="0" cellspacing="0" cellpadding="0">
+        <thead>
+            <tr>
+                <th class="span-3">{{ _('Date') }}</th>
+                <th class="span-5">{{ _('Title') }}</th>
+                <th class="span-7 append-4 last">{{ _('Description') }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for event in events %}
+            <tr>
+                <td>{{ event.date.strftime('%m/%d/%Y') }}</td>
+                <td>{{ event.title }}</td>
+                <td>{{ event.desc }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+        </table>
+    {% endif %}
+{% endblock %}             
+

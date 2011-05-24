@@ -1,0 +1,34 @@
+{% extends 'admin.html' %}
+
+{% block head %}
+{{ super() }}
+<script>
+$(function() {
+    $("#date").datepicker({
+        showOn: "button",
+        buttonImage: "/static/images/calendar.gif",
+        buttonImageOnly: true
+    });
+});
+</script>
+{% endblock %}
+
+
+{% block content %}
+<form action="/admin/events/new" method="post">
+<fieldset>
+    <p>
+        <label class="span-19 last" for="date">Date (mm/dd/yyyy)</label>
+        <input type="text" class="date-input" name="date" id="date">
+    </p>
+    <p>
+        <label class="span-19 last" for="title">Event title</label>
+        <input type="text" name="title" id="title">
+    <p>
+        <label class="span-19 last" for="desc">Event description</label>
+        <textarea name="desc" id="desc"></textarea>
+    </p>
+</fieldset>
+<input type="submit" value="{{ _('Submit') }}">
+</form>
+{% endblock %}

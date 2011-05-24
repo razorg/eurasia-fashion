@@ -10,29 +10,40 @@
 <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
 <link rel="stylesheet" href="/static/css/fashion.css" type="text/css">
 
+<link rel="stylesheet" href="/static/css/jquery-ui.css" type="text/css">
 <script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/jquery-ui.js"></script>
+{% block head %}{% endblock %}
 </head>
 <body>
 <div class="container">
 <div class="span-24 last" id="header">
     <p class="span-24 last" id="logo_text"><img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">Eurasia's fashion industry</p>
 </div>
-<div class="span-24 last">
-{% block header_line %}{% endblock %}
-<div style="float:right">
-    <a href="/set_lang?lang=en_US">EN</a> |
-    <a href="/set_lang?lang=ru_RU">RU</a>
-</div>
-<hr>
-{{ papa }}
-<div class="span-5" id="col1">
-    {% block col1 %}
-    <ul class="vmenu">
+<div class="prepend-5 span-19 last hmenu">
+    <ul>
         <li><a href="/">{{ _('Homepage') }}</a></li>
-        <li><a href="/news">{{ _('News & Announcements') }}</a></li>
+        <li><a href="/news">{{ _('News') }}</a></li>
+        <li><a href="/events">{{ _('Events') }}</a></li>
         <li><a href="#">{{ _('Partners Profiles') }}</a></li>
         <li><a href="#">{{ _('Contacts') }}</a></li>
     </ul>
+</div>
+{% block header_line %}{% endblock %}
+
+<hr>
+<div class="span-5" id="col1">
+    {% block col1 %}
+    <h3>Latest News</h3>
+    fafsafsa<br>
+    fsafasfas<br>
+    fsafasfas<br>
+    <hr>
+    <h3>Upcoming Events</h3>
+    fafsafas<br>
+    fasfagfa<br>
+    gfdgdfsg<br>
+    <hr>
     {% endblock %}
 </div>
 <div class="span-19 last" id="content">

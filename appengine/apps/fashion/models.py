@@ -9,3 +9,9 @@ class Document(db.Model):
 class Article(db.Model):
     title = db.StringProperty(required=True)
     article = db.TextProperty(required=True)
+
+class Event(db.Model):
+    title = db.StringProperty(required=True)
+    desc = db.StringProperty(required=True)
+    date = db.DateTimeProperty(required=True)
+
