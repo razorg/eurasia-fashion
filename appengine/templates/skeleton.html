@@ -34,16 +34,22 @@
 <hr>
 <div class="span-5" id="col1">
     {% block col1 %}
-    <h3>Latest News</h3>
-    fafsafsa<br>
-    fsafasfas<br>
-    fsafasfas<br>
+    {% if articles %}
+        <h3>Latest News</h3>
+        {% for article in articles %}
+            <h4><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h4>
+            <p class="article-side-preview span-5 last">{{ article.article }}</p>
+        {% endfor %}
     <hr>
-    <h3>Upcoming Events</h3>
-    fafsafas<br>
-    fasfagfa<br>
-    gfdgdfsg<br>
-    <hr>
+    {% endif %}
+    {% if events %}
+        <h3>Upcoming Events</h3>
+        {% for event in events %}
+            <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date }}</a></h4>
+            <span class="event-side-preview span-5 last">{{ event.title }}</span>
+        {% endfor %}
+        <hr>
+    {% endif %}
     {% endblock %}
 </div>
 <div class="span-19 last" id="content">

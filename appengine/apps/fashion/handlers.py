@@ -8,18 +8,26 @@ from tipfyext.jinja2 import Jinja2Mixin
 from tipfy.auth import login_required
 from datetime import datetime
 
-class RootHandler(RequestHandler, Jinja2Mixin):
+class ServeBasics(RequestHandler):
     def get(self):
-        #raise(str(self.request.i18n.config))
-        return self.render_response('root.html')
-
-class AdminLoginHandler(RequestHandler, Jinja2Mixin):
-    def get(self):
-        context = {
-            'retry' : self.request.args.get('retry'),
-            'need'  : self.request.args.get('need')
+        articles = Article.all().fetch(100)
+        events = Event.all().fetch(100)
+        self.context = {
+            'articles' : articles,
+            'events' : events
         }
-        return self.render_response('admin_login.html', **context)
+
+class RootHandler(ServeBasics, Jinja2Mixin):
+    def get(self):
+        ServeBasics.get(self)
+        return self.render_response('root.html', **self.context)
+
+class AdminLoginHandler(ServeBasics, Jinja2Mixin):
+    def get(self):
+        ServeBasics.get(self)
+        self.context['retry'] = self.request.args.get('retry')
+        self.context['need']  = self.request.args.get('need')
+        return self.render_response('admin_login.html', **self.context)
 
 class AdminHandler(RequestHandler, Jinja2Mixin):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
@@ -129,8 +137,9 @@ class GetDocHandler(RequestHandler, Jinja2Mixin):
         r.headers['Content-Disposition'] = 'attachment; filename=%s;' % doc.file_name
         return r
 
-class ShowArticleHandler(RequestHandler, Jinja2Mixin):
+class ShowArticleHandler(ServeBasics, Jinja2Mixin):
     def get(self):
+        ServeBasics.get(self)
         id = int(self.request.args.get('id'))
         if not id:
             return Response('no id')
@@ -139,13 +148,13 @@ class ShowArticleHandler(RequestHandler, Jinja2Mixin):
         if not article:
             return Response('no article found')
         
-        self.render_response('article.html', **{'article':article})
+        self.context['article'] = article
+        self.render_response('article.html', **self.context)
 
-class NewsHandler(RequestHandler, Jinja2Mixin):
+class NewsHandler(ServeBasics, Jinja2Mixin):
     def get(self):
-        articles = Article.all().fetch(300)
-        context = {'articles':articles}
-        return self.render_response('articles.html', **context)
+        ServeBasics.get(self)
+        return self.render_response('articles.html', **self.context)
 
 class SetLangHandler(RequestHandler, Jinja2Mixin):
     def get(self):

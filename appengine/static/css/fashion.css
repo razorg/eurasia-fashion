@@ -61,3 +61,8 @@ form.login fieldset p label {
     border-bottom-color: black;
 }
 
+.article-side-preview {
+    text-overflow: ellipsis;
+    overflow:hidden;
+    height:20px;
+}
