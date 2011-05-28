@@ -21,13 +21,20 @@
     <p class="span-24 last" id="logo_text"><img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">Eurasia's fashion industry</p>
 </div>
 <div class="prepend-5 span-19 last hmenu">
+    {% block menu %}
     <ul>
         <li><a href="/">{{ _('Homepage') }}</a></li>
+        <li><a href="/asia">{{ _('Central Asia Invest') }}</a></li>
         <li><a href="/news">{{ _('News') }}</a></li>
         <li><a href="/events">{{ _('Events') }}</a></li>
         <li><a href="#">{{ _('Partners Profiles') }}</a></li>
         <li><a href="#">{{ _('Contacts') }}</a></li>
     </ul>
+    {% endblock %}
+</div>
+<div class="prepend-5 span-19 last hmenu">
+    {% block submenu %}
+    {% endblock %}
 </div>
 {% block header_line %}{% endblock %}
 
@@ -53,6 +60,7 @@
     {% endblock %}
 </div>
 <div class="span-19 last" id="content">
+    {% block above_content %}{% endblock %}
     {% block content %}
     {% endblock %}
 </div>

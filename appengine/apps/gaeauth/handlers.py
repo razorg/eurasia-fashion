@@ -27,6 +27,6 @@ class LoginHandler(RequestHandler):
 
 class RegAdmin(RequestHandler):
     def get(self):
-        a = BaseAuthStore(self.request)
+        a = MultiAuthStore(self.request)
         u = a.create_user('admin','own|admin', password='admin')
         return self.redirect('/')

@@ -8,6 +8,19 @@ from tipfyext.jinja2 import Jinja2Mixin
 from tipfy.auth import login_required
 from datetime import datetime
 
+class AsiaHandler(RequestHandler, Jinja2Mixin):
+    def get(self):
+        return self.render_response('asia.html')
+
+class AsiaHandler1(RequestHandler, Jinja2Mixin):
+    def get(self):
+        return self.render_response('asia-1.html')
+
+class AsiaHandler2(RequestHandler, Jinja2Mixin):
+    def get(self):
+        return self.render_response('asia-2.html')
+
+
 class ServeBasics(RequestHandler):
     def get(self):
         articles = Article.all().fetch(100)

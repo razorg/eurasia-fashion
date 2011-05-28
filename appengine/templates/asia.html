@@ -1,0 +1,65 @@
+{% extends 'skeleton.html' %}
+
+{% block col1 %}
+<ul class="vmenu">
+    <li><a href="/asia/partnerships">Partnerships</a></li>
+    <li><a href="/asia/capacity_building">Capacity Building</a></li>
+    <li><a href="/asia/disseminating_activities">Disseminating Activities</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+<p>
+{% trans %}
+Our strategy for the implementation of the present Project distinguishes the following
+three Components of Activities:
+{% endtrans %}
+</p>
+<ul class="presentation">
+    <li>
+        <a href="/asia/partnerships">{{ _('Setting up the partnerships') }}</a>
+    </li>
+    <p>{% trans %}
+        Establishment of workable partnerships is a core initial step in the project
+        implementation. Under this Component, the ultimate aim will be to ensure co-
+        ordination of all activities towards exchanging of experiences and expertise;
+        transferring of know-how between European and Central Asian Institutions and
+        Professional Associations involved in the T&C supply chain; improving the international
+        collaboration and the creation of partnerships towards the identification and
+        implementation of successful business solutions.
+        {% endtrans %}</p>
+    <li>
+        <a href="/asia/capaticy_building">{{ _('Institutional capacity building activities') }}</a>
+    </li>
+    <p>{% trans %}
+        An important aspect here is the horizontal character of the instruments; our main
+        priority will be to establish appropriate facility mechanisms (e.g. through seminars,
+        visits, exchange of experience, workshops, training, etc.) that will improve the skills
+        and management capacities of the BIOs staff, enhance understanding of the fashion
+        cycles, ensure best practices and favour business cooperation agreements, mutual
+        trade, transfer of business know-how, product standards, investment flows, and
+        internationalisation. The ultimate aim for the BIOs will be to increase their capacity to
+        support SMEs and to influence policies in favour of them.
+        {% endtrans %}</p>
+    <li>
+        <a href="/asia/disseminating_activities">{{ _('Disseminating activities in favour of micro and small scale companies') }}</a>
+    </li>
+    <p>{% trans %}
+        Our Methodological approach to this Component includes specific disseminating
+        activities, incorporating lobbying and advocacy functions to influence policies in favour
+        of SMEs needs in each of the target countries. The ultimate aim will be to increase
+        multiplier effects, including scope for replication and extension of the outcome of the
+        action.
+        {% endtrans %}</p>
+</ul>
+    
+
+<p>
+{% trans %}
+
+{% endtrans %}
+</p>
+
+
+
+{% endblock %}

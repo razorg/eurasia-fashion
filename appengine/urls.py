@@ -1,10 +1,15 @@
 # -*- coding: utf-8 -*-
 """URL definitions."""
 from tipfy.routing import Rule
+from apps.fashion.handlers import RootHandler
 
 rules = [
     Rule('/', name='root', handler='apps.fashion.handlers.RootHandler'),
     Rule('/set_lang', name='set_lang', handler='apps.fashion.handlers.SetLangHandler'),
+    Rule('/asia', name='asia', handler='apps.fashion.handlers.AsiaHandler'),
+    Rule('/asia/partnerships', name='asia-partnerships', handler='apps.fashion.handlers.AsiaHandler1'),
+    Rule('/asia/capacity_building', name='asia-capacity-building', handler='apps.fashion.handlers.AsiaHandler2'),
+    
     Rule('/news', handler='apps.fashion.handlers.NewsHandler'),
     Rule('/news/show', handler='apps.fashion.handlers.ShowArticleHandler'),
     Rule('/admin', handler='apps.fashion.handlers.AdminHandler'),
