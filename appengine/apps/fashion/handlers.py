@@ -20,6 +20,11 @@ class AsiaHandler2(RequestHandler, Jinja2Mixin):
     def get(self):
         return self.render_response('asia-2.html')
 
+class AsiaHandler3(RequestHandler, Jinja2Mixin):
+    def get(self):
+        return self.render_response('asia-3.html')
+
+
 
 class ServeBasics(RequestHandler):
     def get(self):

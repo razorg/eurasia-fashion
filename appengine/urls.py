@@ -9,7 +9,7 @@ rules = [
     Rule('/asia', name='asia', handler='apps.fashion.handlers.AsiaHandler'),
     Rule('/asia/partnerships', name='asia-partnerships', handler='apps.fashion.handlers.AsiaHandler1'),
     Rule('/asia/capacity_building', name='asia-capacity-building', handler='apps.fashion.handlers.AsiaHandler2'),
-    
+    Rule('/asia/disseminating_activities',name='asia-disseminating-activities', handler='apps.fashion.handlers.AsiaHandler3'),
     Rule('/news', handler='apps.fashion.handlers.NewsHandler'),
     Rule('/news/show', handler='apps.fashion.handlers.ShowArticleHandler'),
     Rule('/admin', handler='apps.fashion.handlers.AdminHandler'),

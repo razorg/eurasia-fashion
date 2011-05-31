@@ -1,5 +1,122 @@
 {% extends 'asia.html' %}
 
+{% block above_content %}
+<ul class="page_links">
+    <li><a href="#selection">{{ _('Selection of SMEs to be trained') }}</a></li>
+    <li><a href="#organising">{{ _('Organising collaborative workshops') }}</a></li>
+    <li><a href="#delivery">{{('The delivery of the training of the BIOs to the SMEs')}}</a></li>
+</ul>
+{% endblock %}
+
 {% block content %}
+<h2 id="selection">{{ _('Selection of SMEs to be trained') }}</h2>
+<p>
+{% trans %}
+Based on the Guidelines, training activities directly targeting SMEs will be organised in
+the framework of capacity building activities for the corresponding BIOs. To select the
+SMEs to participate in this action, our project will follow a phased approach:
+{% endtrans %}
+</p>
+
+<ul class="presentation">
+    <li>{{ _('Decide on the number of SMEs by target country') }}</li>
+    <p>{%trans%}A sufficient number of pilot SMEs will be carefully reviewed following a call for
+    expression of interest for participation. The call be published through the press and
+    promoted accordingly in various forms such as newsletters of local Organisations and
+    the Internet (BIO’s and SME related web-sites). The selection process will be designed
+    to ensure - for each target country - adequate sectoral coverage, as well as
+    identification of enterprises with high growth potential.{%endtrans%}</p>
+    <p>{%trans %}We propose to focus on firms from 2-3 mature and successful clusters, so as to maximise positive knock-on effects
+    by capitalising on existing enterprise networks. Particular attention in the selection
+    design will also be placed in identifying enterprises interest in developing cross-border
+    activities, attracting foreign investment and investing in new techniques, innovation
+    and internationalisation.{%endtrans%}</p>
+    <li>{{('Diagnosis of consultancy needs of selected SMEs')}}</li>
+    <p>{%trans%}In this phase efforts will concentrate in establishing a working relationship with
+    selected enterprises and importantly assessing their needs for consultancy support. To
+    this end our activities will be on two main fronts:{%endtrans%}
+    <p>{%trans%}First, the development of trust and mutual confidence between the Project’s
+    consultants and the SME representatives. This will be vital for the successful delivery
+    of consultancy support and will be achieved through in-house visits, discussions with
+    management and staff and presentation of the Project’s ideas and work areas.{%endtrans%}</p>
+    <p>{%trans%}Second, a diagnostic analysis of the SMEs needs for consultancy support. This will
+    build upon the trust developed between the BIOs consultants and the SME staff to
+    ensure that support is both perceived and delivered to address the enterprises’ needs.
+    The form of the diagnostic tools will be agreed with SME management and staff and
+    could include structured questionnaires and/or interviews. Existing practices and
+    processes will be assessed against identified needs and international best practice to
+    maximise targeting of support.{%endtrans%}</p>
+    <li>{{('Delivery of consultancy support')}}</li>
+    <p>{%trans%}Once needs are identified the delivery of consultancy support will be straightforward.
+    Particular emphasis will be placed on staff feedback throughout the delivery period, in
+    order to fine-tune support directly at staff needs. The consultants will also place
+    emphasis in identifying potential linkages with other pilot SMEs and support the
+    development of potential synergies, as well as, further development of clusters and
+    expansion of networks.{%endtrans%}</p>
+</ul>
+
+<h2 id="organising">{{('Organising collaborative workshops')}}</h2>
+<p>{%trans%}The main objective of the current Project is to reinforce the role and competence of
+the BIOs in the target countries, towards being able to support SMEs and to influence
+policies in favour of micro and small scale companies. An important tool for achieving
+such an ambitious task is to bring together the BIOs from Europe with those of the
+target countries and give them the opportunity to exchange best practices and
+experience.{%endtrans%}</p>
+<p>{%trans%}To this end, our Project will organise three collaborative workshops – one per targeted
+country- with European Partner countries and Central Asian target countries BIOs, with
+emphasis on:{%endtrans%}</p>
+<ol class="items">
+<li>{{_('Internationalisation of the T&C sector')}}</li>
+<li>{{_('New technologies in the T&C sector')}}</li>
+<li>{{_('Best EU practices, including new business models, the structure of the T&C market')}}</li>
+</ol>
+
+<p>{%trans%}All three Workshops will be open to stakeholders from the public and private sector in
+the targeted countries, and the interested society at large. During the workshops,
+specific round tables will be organised, focusing on policy and strategy issues, legal
+and regulatory aspects of importance to the SME sector. The key areas of activity will
+include:{%endtrans%}</p>
+<ol class="items">
+<li>{{('Possible development of the SME Strategy / Programme')}}</li>
+<li>{{('Development of an integrated SME information system, including on-line
+discussion / feedback')}}</li>
+<li>{{('Development of a Monitoring and Evaluation system for the SME sector')}}</li>
+<li>{{('Ad hoc issues of importance to the whole sector (e.g. draft laws, regulations,
+export promotion, FDI attraction etc.)')}}</li>
+</ol>
+
+<p>{%trans%}The members of the roundtables will collaborate on a number of issues:{%endtrans%}</p>
+<ol class="items">
+<li>{{('Regular dissemination of information on SME-related matters')}}</li>
+<li>{{('Regular feedback to the public authorities on SME-related issues (e.g. draft laws, regulations, strategies, projects')}}</li>
+<li>{{('Issue-specific working groups (on issues of importance which require detailed input)')}}</li>
+</ol>
+
+<h2 id="delivery">{{('The delivery of the training of the BIOs to the SMEs')}}</h2>
+<p>{%trans%}Delivery of training will commence in month 13 of the Project and run until the end of
+month 17. Each local partner will take care of all typical logistical arrangements for the
+organisation of training events, namely:{%endtrans%}</p>
+<ol class="items">
+<li>{{('Send letters of invitation to participants at least three weeks prior to training')}}</li>
+<li>{{('Book appropriate training venues and provide meals and refreshments')}}</li>
+<li>{{('Provide each trainee with relevant course material')}}</li>
+<li>{{('Arrange for proper interpretation facilities assure the proper equipment and consumables – paper, flip-chart, overhead, laptops etc')}}</li>
+</ol>
+
+<p>{%trans%}Evaluation and review of training activities will be at the core of the Project throughout
+the period of implementation. There will be on-going evaluations throughout the
+delivery period. They will be carried out in the form of questionnaires at the end of
+each set of seminars and will review all the factors contributing to the training
+delivery. Upon completion of training activities the Project will carry out a final ex-post
+evaluation.{%endtrans%}</p>
+<p>{%trans%}At the end of the training period the Project will compile Training Manuals, which will
+put together, in a systematic fashion, all training material delivered. The Manuals will
+be compiled with the active involvement of BIOs staff. They will provide cross
+references to existing and prospective programmes, material and relevant official
+documentation. Importantly, the Manuals will have an open structure enabling the
+BIOs staff to frequently update their contents depending on prospective needs of the
+organisation.{%endtrans%}</p>
+
 
 {% endblock %}
+

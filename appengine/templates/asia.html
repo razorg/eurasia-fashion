@@ -1,5 +1,15 @@
 {% extends 'skeleton.html' %}
 
+{% block head %}
+{{ super() }}
+<script>
+$(function() {
+    $('ul.vmenu li:odd').addClass('odd');
+    $('ul.vmenu li:even').addClass('even');
+});
+</script>
+{% endblock %}
+
 {% block col1 %}
 <ul class="vmenu">
     <li><a href="/asia/partnerships">Partnerships</a></li>
@@ -17,7 +27,7 @@ three Components of Activities:
 </p>
 <ul class="presentation">
     <li>
-        <a href="/asia/partnerships">{{ _('Setting up the partnerships') }}</a>
+        <h3><a href="/asia/partnerships">{{ _('Setting up the partnerships') }}</a></h3>
     </li>
     <p>{% trans %}
         Establishment of workable partnerships is a core initial step in the project
@@ -29,7 +39,7 @@ three Components of Activities:
         implementation of successful business solutions.
         {% endtrans %}</p>
     <li>
-        <a href="/asia/capaticy_building">{{ _('Institutional capacity building activities') }}</a>
+        <h3><a href="/asia/capaticy_building">{{ _('Institutional capacity building activities') }}</a></h3>
     </li>
     <p>{% trans %}
         An important aspect here is the horizontal character of the instruments; our main
@@ -42,7 +52,7 @@ three Components of Activities:
         support SMEs and to influence policies in favour of them.
         {% endtrans %}</p>
     <li>
-        <a href="/asia/disseminating_activities">{{ _('Disseminating activities in favour of micro and small scale companies') }}</a>
+        <h3><a href="/asia/disseminating_activities">{{ _('Disseminating activities') }}</a></h3>
     </li>
     <p>{% trans %}
         Our Methodological approach to this Component includes specific disseminating

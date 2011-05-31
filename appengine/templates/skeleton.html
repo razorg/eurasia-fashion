@@ -19,44 +19,49 @@
 <div class="container">
 <div class="span-24 last" id="header">
     <p class="span-24 last" id="logo_text"><img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">Eurasia's fashion industry</p>
+    <div class="prepend-5 span-19 last hmenu">
+        {% block menu %}
+        <ul>
+            <li><a href="/">{{ _('Homepage') }}</a></li>
+            <li><a href="/asia">{{ _('Central Asia Invest') }}</a></li>
+            <li><a href="/news">{{ _('News') }}</a></li>
+            <li><a href="/events">{{ _('Events') }}</a></li>
+            <li><a href="#">{{ _('Partners Profiles') }}</a></li>
+            <li><a href="#">{{ _('Contacts') }}</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+    <div class="prepend-5 span-19 last hmenu">
+        {% block submenu %}
+        {% endblock %}
+    </div>
+    {% block header_line %}{% endblock %}
 </div>
-<div class="prepend-5 span-19 last hmenu">
-    {% block menu %}
-    <ul>
-        <li><a href="/">{{ _('Homepage') }}</a></li>
-        <li><a href="/asia">{{ _('Central Asia Invest') }}</a></li>
-        <li><a href="/news">{{ _('News') }}</a></li>
-        <li><a href="/events">{{ _('Events') }}</a></li>
-        <li><a href="#">{{ _('Partners Profiles') }}</a></li>
-        <li><a href="#">{{ _('Contacts') }}</a></li>
-    </ul>
-    {% endblock %}
-</div>
-<div class="prepend-5 span-19 last hmenu">
-    {% block submenu %}
-    {% endblock %}
-</div>
-{% block header_line %}{% endblock %}
-
 <hr>
 <div class="span-5" id="col1">
     {% block col1 %}
-    {% if articles %}
-        <h3>Latest News</h3>
-        {% for article in articles %}
-            <h4><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h4>
-            <p class="article-side-preview span-5 last">{{ article.article }}</p>
-        {% endfor %}
-    <hr>
-    {% endif %}
-    {% if events %}
-        <h3>Upcoming Events</h3>
-        {% for event in events %}
-            <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date }}</a></h4>
-            <span class="event-side-preview span-5 last">{{ event.title }}</span>
-        {% endfor %}
-        <hr>
-    {% endif %}
+    <div class="sidebar-block">
+        <div class="sidebar-inner">
+        {% if articles %}
+            <h3>Latest News</h3>
+            {% for article in articles %}
+                <h4><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h4>
+                <p class="article-side-preview span-5 last">{{ article.article }}</p>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
+    <div class="sidebar-block additional">
+        <div class="sidebar-inner">
+        {% if events %}
+            <h3>Upcoming Events</h3>
+            {% for event in events %}
+                <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date }}</a></h4>
+                <span class="event-side-preview span-5 last">{{ event.title }}</span>
+            {% endfor %}
+        {% endif %}
+        </div>
+    </div>
     {% endblock %}
 </div>
 <div class="span-19 last" id="content">
