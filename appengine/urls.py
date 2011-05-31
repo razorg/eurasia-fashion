@@ -12,6 +12,7 @@ rules = [
     Rule('/asia/disseminating_activities',name='asia-disseminating-activities', handler='apps.fashion.handlers.AsiaHandler3'),
     Rule('/news', handler='apps.fashion.handlers.NewsHandler'),
     Rule('/news/show', handler='apps.fashion.handlers.ShowArticleHandler'),
+    Rule('/events', handler='apps.fashion.handlers.ShowEventsHandler'),
     Rule('/admin', handler='apps.fashion.handlers.AdminHandler'),
     Rule('/admin/documents/new', handler='apps.fashion.handlers.NewDocHandler'),
     Rule('/admin/articles/new', handler='apps.fashion.handlers.NewArticleHandler'),

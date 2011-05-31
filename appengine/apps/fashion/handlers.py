@@ -139,6 +139,13 @@ class ListEventsHandler(RequestHandler, Jinja2Mixin):
         }
         return self.render_response('admin_list_events.html', **context)
 
+class ShowEventsHandler(RequestHandler, Jinja2Mixin):
+    def get(self):
+        context = {
+            'events' : Event.all().fetch(300)
+        }
+        return self.render_response('events.html', **context);
+        
 class GetDocHandler(RequestHandler, Jinja2Mixin):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
     def get(self):

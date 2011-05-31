@@ -1,0 +1,25 @@
+{% extends 'skeleton.html' %}
+
+{% block head %}
+{{ super() }}
+<link rel='stylesheet' type='text/css' href='/static/css/fullcalendar/fullcalendar.css' />
+<script type='text/javascript' src='/static/js/fullcalendar/fullcalendar.js'></script>
+<script>
+$(document).ready(function() {
+    $('#calendar').fullCalendar({
+        events: [
+            {% for e in events %}
+            {
+                title: '{{ e.title }}',
+                start: '{{ e.date.strftime('%Y-%m-%d') }}'
+            },
+            {% endfor %}
+        ]
+    })
+});
+</script>
+{% endblock %}
+
+{% block content %}
+<div id="calendar"></div>
+{% endblock %}

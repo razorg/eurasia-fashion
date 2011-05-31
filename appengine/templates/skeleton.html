@@ -56,7 +56,7 @@
         {% if events %}
             <h3>Upcoming Events</h3>
             {% for event in events %}
-                <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date }}</a></h4>
+                <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date.strftime('%d-%m-%Y') }}</a></h4>
                 <span class="event-side-preview span-5 last">{{ event.title }}</span>
             {% endfor %}
         {% endif %}
