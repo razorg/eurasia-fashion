@@ -13,13 +13,14 @@
 <link rel="stylesheet" href="/static/css/jquery-ui.css" type="text/css">
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script type="text/javascript" src="/static/js/jquery-ui.js"></script>
+<script type="text/javascript" src="/static/js/fashion.js"></script>
 {% block head %}{% endblock %}
 </head>
 <body>
 <div class="container">
 <div class="span-24 last" id="header">
     <p class="span-24 last" id="logo_text"><img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">Eurasia's fashion industry</p>
-    <div class="prepend-5 span-19 last hmenu">
+    <div id="menu" class="prepend-5 span-19 last hmenu">
         {% block menu %}
         <ul>
             <li><a href="/">{{ _('Homepage') }}</a></li>

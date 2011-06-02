@@ -7,6 +7,9 @@ body {
 #header {
     padding-top: 15px;
 }
+#menu {
+    font-size: 1.3em;
+}
 .sidebar-block {
     background: #F2F2F2;
     border: 1px solid #CCC;
@@ -136,10 +139,10 @@ form.login fieldset p label {
     padding: 6px 3px 4px 3px;
     margin-right: 20px;
     text-decoration: none;
-    border-bottom: 3px solid gray;
+    border-bottom: 3px solid #4961C7;
 }
 
-.hmenu ul li a:hover, .hmenu ul li a.selected{
+.hmenu ul li a:hover, .hmenu ul li a.selected {
     border-bottom-color: black;
 }
 
