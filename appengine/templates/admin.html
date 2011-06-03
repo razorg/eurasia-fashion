@@ -2,12 +2,9 @@
 
 {% block col1 %}
 <ul class="vmenu">
-    <li><a href="/admin/documents/new">Upload new document</a></li>
-    <li><a href="/admin/documents/list">List documents</a></li>
-    <li><a href="/admin/articles/new">Submit new article</a></li>
-    <li><a href="/admin/articles/list">List articles</a></li>
-    <li><a href="/admin/events/new">Add new event</a></li>
-    <li><a href="/admin/events/list">List events</a></li>
+    <li><a href="/admin/documents">{{ _('Documents') }}</a></li>
+    <li><a href="/admin/events">{{ _('Events') }}</a></li>
+    <li><a href="/admin/articles">{{ _('Articles') }}</a></li>
 </ul>
 {% endblock %}
 

@@ -1,0 +1,48 @@
+{% extends 'admin.html' %}
+
+{% block content %}
+<script>
+$(document).ready(function () {
+    $('#new').button({
+        icons: {
+            primary: "ui-icon-plusthick"
+        }
+    });
+    $('a.del').button({
+        icons: {
+            primary: "ui-icon-minusthick",
+        },
+        text: false
+    });
+});
+</script>
+<a id="new" href="/admin/events/new">{{('New Event')}}</a>
+<br><br>
+{% if new %}
+    <p class="success"> {{_('You have added a new event') }}</p>
+{% endif %}
+{% if not events %}
+    <p class="info">{{ _('There are no events available') }}</p>
+{% else %}
+    <table border="0" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th class="span-2">{{ _('Actions') }}</th>
+            <th class="span-3">{{ _('Date') }}</th>
+            <th class="span-5">{{ _('Title') }}</th>
+            <th class="span-7 append-4 last">{{ _('Description') }}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for event in events %}
+        <tr>
+            <td><a class="del" href="/admin/events/delete?id={{ event.key().id() }}"></a></td>
+            <td>{{ event.date.strftime('%m/%d/%Y') }}</td>
+            <td>{{ event.title }}</td>
+            <td>{{ event.desc }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endif %}
+{% endblock %}

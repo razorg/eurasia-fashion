@@ -70,7 +70,7 @@ class NewDocHandler(RequestHandler, Jinja2Mixin):
         
         doc = Document(title=title, desc=desc, file_name=file.filename, file=db.Blob(file.read()))
         doc.put()
-        return self.redirect('/admin/documents/list?new=1')
+        return self.redirect('/admin/documents?new=1')
 
 class NewArticleHandler(RequestHandler, Jinja2Mixin):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
@@ -86,7 +86,7 @@ class NewArticleHandler(RequestHandler, Jinja2Mixin):
         
         article = Article(title=title, article=article)
         article.put()
-        return self.redirect('/admin/articles/list?new=1')
+        return self.redirect('/admin/articles?new=1')
 
 class NewEventHandler(RequestHandler, Jinja2Mixin):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
@@ -107,7 +107,7 @@ class NewEventHandler(RequestHandler, Jinja2Mixin):
         
         e = Event(title=title, desc=desc, date=d)
         e.put()
-        return self.redirect('/admin/events/list?new=1')
+        return self.redirect('/admin/events?new=1')
 
 class ListDocsHandler(RequestHandler, Jinja2Mixin):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
@@ -138,6 +138,72 @@ class ListEventsHandler(RequestHandler, Jinja2Mixin):
             'events' : events
         }
         return self.render_response('admin_list_events.html', **context)
+
+class AdminManageEventsHandler(RequestHandler, Jinja2Mixin):
+    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    def get(self):
+        events = Event.all().fetch(300)
+        context = {
+            'events' : events,
+            'new' : self.request.args.get('new')
+        }
+        return self.render_response('admin_events.html', **context)
+
+class AdminManageDocumentsHandler(RequestHandler, Jinja2Mixin):
+    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    def get(self):
+        documents = Document.all().fetch(300)
+        context = {
+            'documents' : documents,
+            'new' : self.request.args.get('new')
+        }
+        return self.render_response('admin_documents.html', **context)
+
+class AdminManageArticlesHandler(RequestHandler, Jinja2Mixin):
+    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    def get(self):
+        articles = Article.all().fetch(300)
+        context = {
+            'articles' : articles,
+            'new' : self.request.args.get('new')
+        }
+        return self.render_response('admin_articles.html', **context)
+
+class DeleteDocHandler(RequestHandler):
+    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    def get(self):
+        id = int(self.request.args.get('id'))
+        if not id:
+            return Response('no id given')
+        doc = Document.get_by_id(id)
+        if not doc:
+            return Response('no doc found')
+        doc.delete()
+        return self.redirect('/admin/documents?del=1')
+
+class DeleteEventHandler(RequestHandler):
+    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    def get(self):
+        id = int(self.request.args.get('id'))
+        if not id:
+            return Response('no id given')
+        event = Event.get_by_id(id)
+        if not event:
+            return Response('no event found')
+        event.delete()
+        return self.redirect('/admin/events?del=1')
+
+class DeleteArticleHandler(RequestHandler):
+    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    def get(self):
+        id = int(self.request.args.get('id'))
+        if not id:
+            return Response('no id given')
+        article = Article.get_by_id(id)
+        if not article:
+            return Response('no article found')
+        article.delete()
+        return self.redirect('/admin/articles?del=1')
 
 class ShowEventsHandler(RequestHandler, Jinja2Mixin):
     def get(self):
