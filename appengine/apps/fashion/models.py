@@ -12,6 +12,6 @@ class Article(db.Model):
 
 class Event(db.Model):
     title = db.StringProperty(required=True)
-    desc = db.StringProperty(required=True)
+    desc = db.TextProperty(required=True)
     date = db.DateTimeProperty(required=True)
 

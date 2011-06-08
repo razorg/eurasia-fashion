@@ -246,6 +246,20 @@ class ShowArticleHandler(ServeBasics, Jinja2Mixin):
         self.context['article'] = article
         return self.render_response('article.html', **self.context)
 
+class ShowEventHandler(ServeBasics, Jinja2Mixin):
+    def get(self):
+        ServeBasics.get(self)
+        id = int(self.request.args.get('id'))
+        if not id:
+            return Response('no id')
+        
+        event = Event.get_by_id(id)
+        if not event:
+            return Response('no event found')
+        
+        self.context['event'] = event
+        return self.render_response('event.html', **self.context)
+
 class NewsHandler(ServeBasics, Jinja2Mixin):
     def get(self):
         ServeBasics.get(self)

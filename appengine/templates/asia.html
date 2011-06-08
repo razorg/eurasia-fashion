@@ -11,10 +11,16 @@ $(function() {
 {% endblock %}
 
 {% block col1 %}
-<ul class="vmenu">
-    <li><a href="/asia/partnerships">Partnerships</a></li>
-    <li><a href="/asia/capacity_building">Capacity Building</a></li>
-    <li><a href="/asia/disseminating_activities">Disseminating Activities</a></li>
+<div class="sidebar-block">
+    <div class="sidebar-inner">
+        <h3>{{_('Project Landmarks')}}</h3>
+        <ul class="circles">
+        <li><h4><a href="/asia/partnerships">{{('Partnerships')}}</a></h4></li>
+        <li><h4><a href="/asia/capacity_building">{{('Capacity Building')}}</a></h4></li>
+        <li><h4><a href="/asia/disseminating_activities">{{('Disseminating Activities')}}</a></h4></li>
+        </ul>
+    </div>
+</div>
 </ul>
 {% endblock %}
 

@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="/static/css/fashion.css" type="text/css">
 
 <link rel="stylesheet" href="/static/css/jquery-ui.css" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
 <script type="text/javascript" src="/static/js/jquery.js"></script>
 <script type="text/javascript" src="/static/js/jquery-ui.js"></script>
 <script type="text/javascript" src="/static/js/fashion.js"></script>
@@ -18,10 +19,18 @@
 <body>
 <div class="container">
 <div class="span-24 last" id="header">
-    <div id="menu" class="prepend-5 span-19 last hmenu">
+    <div id="head-wow" class="span-24">
+        <div class="span-6">
+            <img style="margin-top:18px;"id="header_logo" src="/static/images/fashion/logo-ef.png" alt="Eurasia Fashion">
+        </div>
+        <div class="prepend-1 span-15 last" style="border-left:1px solid gray;">
+            <div class="wrap_black"><img style="padding:7px;"src="/static/images/fashion/top3.png"></div>
+        </div>
+    </div>
+    <div id="menu" class="span-24 last">
         {% block menu %}
-        <ul>
-            <li><a href="/">{{ _('Homepage') }}</a></li>
+        <ul class="span-24 last">
+            <li style="margin-left:15%;"><a href="/">{{ _('Homepage') }}</a></li>
             <li><a href="/asia">{{ _('Central Asia Invest') }}</a></li>
             <li><a href="/news">{{ _('News') }}</a></li>
             <li><a href="/events">{{ _('Events') }}</a></li>
@@ -35,11 +44,7 @@
         {% endblock %}
     </div>
     {% block header_line %}{% endblock %}
-    <div id="logo" class="span-24 last">
-        <img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">
-    </div>
 </div>
-<hr>
 <div class="span-5" id="col1">
     {% block col1 %}
     <div class="sidebar-block">
@@ -62,7 +67,7 @@
             <h3>Upcoming Events</h3>
             <div class="wrapper">
                 {% for event in events %}
-                    <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date.strftime('%d-%m-%Y') }}</a></h4>
+                    <h4 style="margin-bottom:0;"><a href="/event/show?id={{ event.key().id() }}">{{ event.date.strftime('%d/%m/%Y') }}</a></h4>
                     <span class="event-side-preview span-5 last">{{ event.title }}</span>
                     <hr>
                 {% endfor %}
@@ -73,6 +78,16 @@
         </div>
     </div>
     {% endblock %}
+    <div class="additional sidebar-block">
+        <div class="sidebar-inner">
+            <img src="/static/images/fashion/logo1.png">
+            <img src="/static/images/fashion/logo2.png">
+            <img src="/static/images/fashion/logo3.png">
+            <img src="/static/images/fashion/logo4.png">
+            <img src="/static/images/fashion/logo5.png">
+            
+        </div>
+    </div>
 </div>
 <div class="span-19 last" id="content">
     {% block above_content %}{% endblock %}

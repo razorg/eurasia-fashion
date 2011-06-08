@@ -11,10 +11,14 @@ $(document).ready(function() {
             {% for e in events %}
             {
                 title: '{{ e.title }}',
-                start: '{{ e.date.strftime('%Y-%m-%d') }}'
+                start: '{{ e.date.strftime('%Y-%m-%d') }}',
+                id: '{{e.key().id()}}'
             },
             {% endfor %}
-        ]
+        ],
+        eventClick: function(event, jsEvent, view) {
+            window.location = '/event/show?id=' + event.id;
+        }
     })
 });
 </script>

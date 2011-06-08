@@ -9,8 +9,10 @@ $(document).ready(function() {
         buttonImage: "/static/images/calendar.gif",
         buttonImageOnly: true
     });
+    $('#ui-datepicker-div').css('clip', 'auto');
 });
 </script>
+<script type="text/javascript" src="/static/js/ckeditor/ckeditor.js"></script>
 {% endblock %}
 
 
@@ -26,7 +28,7 @@ $(document).ready(function() {
         <input type="text" name="title" id="title">
     <p>
         <label class="span-19 last" for="desc">Event description</label>
-        <textarea name="desc" id="desc"></textarea>
+        <textarea class="ckeditor" name="desc" id="desc"></textarea>
     </p>
 </fieldset>
 <input type="submit" value="{{ _('Submit') }}">

@@ -1,12 +1,18 @@
 {% extends 'skeleton.html' %}
 
 {% block col1 %}
-<ul class="vmenu">
-    <li><a href="/admin/documents">{{ _('Documents') }}</a></li>
-    <li><a href="/admin/events">{{ _('Events') }}</a></li>
-    <li><a href="/admin/articles">{{ _('Articles') }}</a></li>
-</ul>
+<div class="sidebar-block">
+    <div class="sidebar-inner">
+        <h3>Administration</h3>
+        <ul class="circles">
+        <li><h4><a href="/admin/documents">{{ _('Documents') }}</a></h4></li>
+        <li><h4><a href="/admin/events">{{ _('Events') }}</a></h4></li>
+        <li><h4><a href="/admin/articles">{{ _('Articles') }}</a></h4></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
 
 {% block content %}
+fafa
 {% endblock %}

@@ -1,0 +1,7 @@
+{% extends 'skeleton.html' %}
+
+{% block content %}
+<h2 class="title">{{ event.title }}</h2>
+<blockquote>{{ event.date.strftime('%d/%m/%Y') }}</blockquote>
+{{ event.desc }}
+{% endblock %}

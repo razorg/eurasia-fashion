@@ -25,6 +25,7 @@ rules = [
     Rule('/admin/articles/new', handler='apps.fashion.handlers.NewArticleHandler'),
     Rule('/admin/events/new', handler='apps.fashion.handlers.NewEventHandler'),
     Rule('/admin/articles/show', handler='apps.fashion.handlers.ShowArticleHandler'),
+    Rule('/event/show', handler='apps.fashion.handlers.ShowEventHandler'),
     Rule('/admin/documents/list', handler='apps.fashion.handlers.ListDocsHandler'),
     Rule('/admin/articles/list', handler='apps.fashion.handlers.ListArticlesHandler'),
     Rule('/admin/events/list', handler='apps.fashion.handlers.ListEventsHandler'),
