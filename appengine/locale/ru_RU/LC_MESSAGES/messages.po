@@ -9,7 +9,7 @@ msgstr ""
 "Project-Id-Version: PROJECT VERSION\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
 "POT-Creation-Date: 2011-05-19 03:21+0300\n"
-"PO-Revision-Date: 2011-05-21 01:50+0300\n"
+"PO-Revision-Date: 2011-06-12 19:55+0300\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: ru_RU <LL@li.org>\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
@@ -19,11 +19,1005 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 0.9.5\n"
 
-#: templates/skeleton.html:30
+#: templates/admin.html:8
+msgid "Documents"
+msgstr ""
+
+#: templates/admin.html:9 templates/skeleton.html:56
+msgid "Events"
+msgstr ""
+
+#: templates/admin.html:10
+msgid "Articles"
+msgstr ""
+
+#: templates/admin_articles.html:22
+msgid "You have added a new article"
+msgstr ""
+
+#: templates/admin_articles.html:25
+msgid "There are no articles"
+msgstr ""
+
+#: templates/admin_articles.html:30 templates/admin_documents.html:30
+#: templates/admin_events.html:30
+msgid "Actions"
+msgstr ""
+
+#: templates/admin_articles.html:31 templates/admin_documents.html:31
+#: templates/admin_events.html:32
+msgid "Title"
+msgstr ""
+
+#: templates/admin_documents.html:22
+msgid "You have added a new document"
+msgstr ""
+
+#: templates/admin_documents.html:25
+msgid "There are no uploaded documents"
+msgstr ""
+
+#: templates/admin_documents.html:32 templates/admin_new_doc.html:32
+msgid "File"
+msgstr ""
+
+#: templates/admin_events.html:22
+msgid "You have added a new event"
+msgstr ""
+
+#: templates/admin_events.html:25
+msgid "There are no events available"
+msgstr ""
+
+#: templates/admin_events.html:31
+msgid "Date"
+msgstr ""
+
+#: templates/admin_login.html:7
+msgid "Admin Login"
+msgstr ""
+
+#: templates/admin_login.html:10
+msgid "Wrong credentials"
+msgstr ""
+
+#: templates/admin_login.html:15
+msgid "You need to be logged in to access this area"
+msgstr ""
+
+#: templates/admin_login.html:19
+msgid "Username"
+msgstr ""
+
+#: templates/admin_login.html:23
+msgid "Password"
+msgstr ""
+
+#: templates/admin_login.html:30 templates/admin_new_article.html:31
+#: templates/admin_new_doc.html:35 templates/admin_new_event.html:34
+msgid "Submit"
+msgstr ""
+
+#: templates/admin_new_article.html:10
+msgid ""
+"\n"
+"    Add a new article with the form below.\n"
+"    The article will be shown at the homepage and News section.\n"
+"    "
+msgstr ""
+
+#: templates/admin_new_article.html:24
+msgid "Article title"
+msgstr ""
+
+#: templates/admin_new_article.html:28
+msgid "Article content"
+msgstr ""
+
+#: templates/admin_new_doc.html:10
+msgid ""
+"\n"
+"    Select the file you would like to upload.\n"
+"    After it is submitted, it will be visible to under the documents "
+"section\n"
+"    "
+msgstr ""
+
+#: templates/admin_new_doc.html:24
+msgid "Document title"
+msgstr ""
+
+#: templates/admin_new_doc.html:28
+msgid "Document description"
+msgstr ""
+
+#: templates/articles.html:5
+msgid "There are no articles available"
+msgstr ""
+
+#: templates/asia-1.html:5 templates/asia-1.html:12
+msgid "Drawing up a Partnership Agreement"
+msgstr ""
+
+#: templates/asia-1.html:6
+msgid ""
+"Assessment of the BIOs capacity to influence policies in favour of SMEs "
+"in the target countries"
+msgstr ""
+
+#: templates/asia-1.html:14
+msgid ""
+"\n"
+"The purpose of setting up the partnerships between the EU partners and "
+"the Central\n"
+"Asian target countries (i.e. Kazakhstan, Kyrgyzstan, Uzbekistan) is to "
+"ensure clear\n"
+"allocation of responsibilities, best coordination of activities, exchange"
+" of experience,\n"
+"transfer of know-how in the T&C supply chain, as well as to improve "
+"international\n"
+"collaboration.\n"
+msgstr ""
+
+#: templates/asia-1.html:23
+msgid ""
+"\n"
+"To this end, our Consortium intents to collaborate with each member of "
+"the future\n"
+"partnership and draw up an agreement defining the technical and financial"
+" rights and\n"
+"obligations of each partnership member, including (a) the establishment "
+"of a\n"
+"Coordination Committee of the Project (CCP) consisting of two "
+"representatives of\n"
+"each target country, one responsible for the technical and one for the "
+"financial issues\n"
+"to represent the BIOs of the target countries throughout the whole "
+"project lifetime, (b)\n"
+"the detailed and clear allocation of responsibilities for implementing "
+"all the activities\n"
+"envisaged in this proposal, and (c) a balanced and detailed distribution "
+"of costs.\n"
+msgstr ""
+
+#: templates/asia-1.html:35
+msgid ""
+"\n"
+"The Agreement will be drafted and distributed to all partners for "
+"discussion and\n"
+"comments. When all elements are agreed, the final text will be signed by "
+"all partners\n"
+"and will consist the official reference document for the project "
+"implementation,\n"
+"monitoring and evaluation during the lifetime of the project.\n"
+msgstr ""
+
+#: templates/asia-1.html:43
+msgid ""
+"Assessment of the BIOs capacity to influence policies in favour\n"
+"of SMEs in the target countries"
+msgstr ""
+
+#: templates/asia-1.html:46
+msgid ""
+"\n"
+"To assess the BIOs’ potential to deliver appropriate business services to"
+" SMEs, our\n"
+"project (in cooperation with external experts) will cooperate with the "
+"three target\n"
+"countries’ Working Groups and embark into a multifaceted review of the "
+"current\n"
+"situation, covering:\n"
+msgstr ""
+
+#: templates/asia-1.html:54
+msgid "Status review"
+msgstr ""
+
+#: templates/asia-1.html:55
+msgid ""
+"A review of the current status of the regional Central Asian T&C "
+"Industry, including\n"
+"        existing regulations and legislation, access to finance, access "
+"to new markets,\n"
+"        access to new technologies, marketing, and branding promotion"
+msgstr ""
+
+#: templates/asia-1.html:58
+msgid "Regional Studies"
+msgstr ""
+
+#: templates/asia-1.html:59
+msgid ""
+"Regional studies concerning the current situation on T&C in each of the "
+"target\n"
+"        countries"
+msgstr ""
+
+#: templates/asia-1.html:61
+msgid "Impact Analysis"
+msgstr ""
+
+#: templates/asia-1.html:62
+msgid ""
+"Analysis of the impact of similar European Initiatives to the target "
+"countries"
+msgstr ""
+
+#: templates/asia-1.html:63
+msgid "Existing BIOs"
+msgstr ""
+
+#: templates/asia-1.html:64
+msgid ""
+"The existing BIOs in each of the target countries and their potential in "
+"covering the\n"
+"        objectives of the project"
+msgstr ""
+
+#: templates/asia-1.html:70
+msgid ""
+"Work under this activity includes the identification of the necessary "
+"information links\n"
+"in the Textile and Clothing sector. This will be carried out along the "
+"following lines"
+msgstr ""
+
+#: templates/asia-1.html:81
+msgid ""
+"Based on the results of the above identification, the project will "
+"subcontract the\n"
+"creation of a website that will inform the stakeholders on potential "
+"investment and\n"
+"business opportunities, including databases of suppliers, subcontractors,"
+" retailers,\n"
+"potential contractors, local partners, as well as information on "
+"offer/demand\n"
+"availability of services, regulatory information etc."
+msgstr ""
+
+#: templates/asia-1.html:89
+msgid ""
+"The website will link with Activity 3.2 below and will be developed "
+"taking into account\n"
+"the needs for data performance, communication of information between "
+"partners and\n"
+"BIOs and external users. It will be used for communication of all project"
+" activities and\n"
+"provide information to relevant actors. Our Project will use the internal"
+" communication\n"
+"groups to provide daily advice from EU partners to the target countries’ "
+"BIOs and\n"
+"through them to local SMEs. The internal system will be used for "
+"dissemination of\n"
+"reports and minutes of meetings, access rights will be designed as part "
+"of the website.\n"
+"The website will be functioning as a Monitoring Instrument and, "
+"therefore, it shall be\n"
+"attractive and promoting the main goal of BIOs, towards reinforcing their"
+" role and\n"
+"competence to support the SMEs and to influence policies in favour of "
+"micro and small\n"
+"scale companies."
+msgstr ""
+
+#: templates/asia-1.html:103
+msgid ""
+"Following the establishment of the website, our Project will consequently"
+" proceed to\n"
+"establish the appropriate collaborations of network actors that will test"
+" solutions,\n"
+"which are likely to leverage the creation of joint ventures and "
+"partnerships between\n"
+"European and the targeted Central Asian countries’ BIOs."
+msgstr ""
+
+#: templates/asia-2.html:5 templates/asia-2.html:12
+msgid "Selection of SMEs to be trained"
+msgstr ""
+
+#: templates/asia-2.html:6
+msgid "Organising collaborative workshops"
+msgstr ""
+
+#: templates/asia-2.html:14
+msgid ""
+"\n"
+"Based on the Guidelines, training activities directly targeting SMEs will"
+" be organised in\n"
+"the framework of capacity building activities for the corresponding BIOs."
+" To select the\n"
+"SMEs to participate in this action, our project will follow a phased "
+"approach:\n"
+msgstr ""
+
+#: templates/asia-2.html:22
+msgid "Decide on the number of SMEs by target country"
+msgstr ""
+
+#: templates/asia-2.html:23
+msgid ""
+"A sufficient number of pilot SMEs will be carefully reviewed following a "
+"call for\n"
+"    expression of interest for participation. The call be published "
+"through the press and\n"
+"    promoted accordingly in various forms such as newsletters of local "
+"Organisations and\n"
+"    the Internet (BIO’s and SME related web-sites). The selection process"
+" will be designed\n"
+"    to ensure - for each target country - adequate sectoral coverage, as "
+"well as\n"
+"    identification of enterprises with high growth potential."
+msgstr ""
+
+#: templates/asia-2.html:29
+msgid ""
+"We propose to focus on firms from 2-3 mature and successful clusters, so "
+"as to maximise positive knock-on effects\n"
+"    by capitalising on existing enterprise networks. Particular attention"
+" in the selection\n"
+"    design will also be placed in identifying enterprises interest in "
+"developing cross-border\n"
+"    activities, attracting foreign investment and investing in new "
+"techniques, innovation\n"
+"    and internationalisation."
+msgstr ""
+
+#: templates/asia-2.html:35
+msgid ""
+"In this phase efforts will concentrate in establishing a working "
+"relationship with\n"
+"    selected enterprises and importantly assessing their needs for "
+"consultancy support. To\n"
+"    this end our activities will be on two main fronts:"
+msgstr ""
+
+#: templates/asia-2.html:38
+msgid ""
+"First, the development of trust and mutual confidence between the "
+"Project’s\n"
+"    consultants and the SME representatives. This will be vital for the "
+"successful delivery\n"
+"    of consultancy support and will be achieved through in-house visits, "
+"discussions with\n"
+"    management and staff and presentation of the Project’s ideas and work"
+" areas."
+msgstr ""
+
+#: templates/asia-2.html:42
+msgid ""
+"Second, a diagnostic analysis of the SMEs needs for consultancy support. "
+"This will\n"
+"    build upon the trust developed between the BIOs consultants and the "
+"SME staff to\n"
+"    ensure that support is both perceived and delivered to address the "
+"enterprises’ needs.\n"
+"    The form of the diagnostic tools will be agreed with SME management "
+"and staff and\n"
+"    could include structured questionnaires and/or interviews. Existing "
+"practices and\n"
+"    processes will be assessed against identified needs and international"
+" best practice to\n"
+"    maximise targeting of support."
+msgstr ""
+
+#: templates/asia-2.html:50
+msgid ""
+"Once needs are identified the delivery of consultancy support will be "
+"straightforward.\n"
+"    Particular emphasis will be placed on staff feedback throughout the "
+"delivery period, in\n"
+"    order to fine-tune support directly at staff needs. The consultants "
+"will also place\n"
+"    emphasis in identifying potential linkages with other pilot SMEs and "
+"support the\n"
+"    development of potential synergies, as well as, further development "
+"of clusters and\n"
+"    expansion of networks."
+msgstr ""
+
+#: templates/asia-2.html:59
+msgid ""
+"The main objective of the current Project is to reinforce the role and "
+"competence of\n"
+"the BIOs in the target countries, towards being able to support SMEs and "
+"to influence\n"
+"policies in favour of micro and small scale companies. An important tool "
+"for achieving\n"
+"such an ambitious task is to bring together the BIOs from Europe with "
+"those of the\n"
+"target countries and give them the opportunity to exchange best practices"
+" and\n"
+"experience."
+msgstr ""
+
+#: templates/asia-2.html:65
+msgid ""
+"To this end, our Project will organise three collaborative workshops – "
+"one per targeted\n"
+"country- with European Partner countries and Central Asian target "
+"countries BIOs, with\n"
+"emphasis on:"
+msgstr ""
+
+#: templates/asia-2.html:69
+msgid "Internationalisation of the T&C sector"
+msgstr ""
+
+#: templates/asia-2.html:70
+msgid "New technologies in the T&C sector"
+msgstr ""
+
+#: templates/asia-2.html:71
+msgid ""
+"Best EU practices, including new business models, the structure of the "
+"T&C market"
+msgstr ""
+
+#: templates/asia-2.html:74
+msgid ""
+"All three Workshops will be open to stakeholders from the public and "
+"private sector in\n"
+"the targeted countries, and the interested society at large. During the "
+"workshops,\n"
+"specific round tables will be organised, focusing on policy and strategy "
+"issues, legal\n"
+"and regulatory aspects of importance to the SME sector. The key areas of "
+"activity will\n"
+"include:"
+msgstr ""
+
+#: templates/asia-2.html:88
+msgid "The members of the roundtables will collaborate on a number of issues:"
+msgstr ""
+
+#: templates/asia-2.html:96
+msgid ""
+"Delivery of training will commence in month 13 of the Project and run "
+"until the end of\n"
+"month 17. Each local partner will take care of all typical logistical "
+"arrangements for the\n"
+"organisation of training events, namely:"
+msgstr ""
+
+#: templates/asia-2.html:106
+msgid ""
+"Evaluation and review of training activities will be at the core of the "
+"Project throughout\n"
+"the period of implementation. There will be on-going evaluations "
+"throughout the\n"
+"delivery period. They will be carried out in the form of questionnaires "
+"at the end of\n"
+"each set of seminars and will review all the factors contributing to the "
+"training\n"
+"delivery. Upon completion of training activities the Project will carry "
+"out a final ex-post\n"
+"evaluation."
+msgstr ""
+
+#: templates/asia-2.html:112
+msgid ""
+"At the end of the training period the Project will compile Training "
+"Manuals, which will\n"
+"put together, in a systematic fashion, all training material delivered. "
+"The Manuals will\n"
+"be compiled with the active involvement of BIOs staff. They will provide "
+"cross\n"
+"references to existing and prospective programmes, material and relevant "
+"official\n"
+"documentation. Importantly, the Manuals will have an open structure "
+"enabling the\n"
+"BIOs staff to frequently update their contents depending on prospective "
+"needs of the\n"
+"organisation."
+msgstr ""
+
+#: templates/asia-3.html:5 templates/asia-3.html:12
+msgid "Designing and Implementing an Action Plan for a Communication Strategy"
+msgstr ""
+
+#: templates/asia-3.html:6
+msgid ""
+"Development and distribution of international and analytical "
+"dissemination material"
+msgstr ""
+
+#: templates/asia-3.html:14
+msgid ""
+"We consider this activity as very crucial for achieving the purpose of "
+"the present\n"
+"Project. The underlying concept of the envisaged campaign will be to "
+"mobilise wider\n"
+"stakeholders, social partners, final beneficiaries and general public at "
+"the regional and\n"
+"national level in terms of effectively lobbying and advocating in favour "
+"of SMEs."
+msgstr ""
+
+#: templates/asia-3.html:19
+msgid ""
+"Our Project will undertake consultation meetings with the Working Groups "
+"with the\n"
+"aim to develop full details concerning the campaigns’ methodology and "
+"approach. A\n"
+"final outcome of the above consultations will be a written agreement on "
+"the joint\n"
+"campaign activities and related outputs, including the basic action plan."
+"\n"
+"The action plan will include a step by step and continuous procedure, "
+"divided into\n"
+"three stages:"
+msgstr ""
+
+#: templates/asia-3.html:27
+msgid ""
+"The informative stage, aiming at developing a primary general context on "
+"the\n"
+"need to promote the development of the private sector by encouraging the "
+"growth\n"
+"and expansion of small and medium enterprises. To this end, the following"
+" means\n"
+"shall be used:"
+msgstr ""
+
+#: templates/asia-3.html:32
+msgid ""
+"Seminars targeting the BIOs of the target countries (Train–of-trainers "
+"activities)\n"
+"    and exchange of visits of the BIOs to the European Partner countries "
+"(On-the-job\n"
+"    training activities)"
+msgstr ""
+
+#: templates/asia-3.html:35
+msgid ""
+"Workshops open to the SMEs and the public sector to increase awareness on"
+" C&T\n"
+"    sector"
+msgstr ""
+
+#: templates/asia-3.html:37
+msgid "Training to the SMEs and the local BIOs of the target countries"
+msgstr ""
+
+#: templates/asia-3.html:38
+msgid "Brokerage events and Conference"
+msgstr ""
+
+#: templates/asia-3.html:39
+msgid "Dissemination material"
+msgstr ""
+
+#: templates/asia-3.html:41
+msgid ""
+"The persuasion stage, aiming at advocating the benefits out of promoting "
+"the\n"
+"growth and expansion of the SMEs for the business community and the "
+"society at\n"
+"large. To this end, the campaign will provide specific contributions on "
+"the usefulness\n"
+"of EU –Central Asia collaboration mainly targeting towards using "
+"electronic means\n"
+"(internet, social networks), in order to promote the beneficial character"
+" of the present\n"
+"Project initiatives."
+msgstr ""
+
+#: templates/asia-3.html:47
+msgid ""
+"The mobilisation stage, aiming at further utilisation of the key project "
+"results. To\n"
+"achieve mobilisation, 4 panel discussions for representatives of BIOs, "
+"SMEs and\n"
+"general public shall be organised within the Workshops (see Activity 2.3)"
+" in each of\n"
+"the target countries. In each panel discussion a moderator will be "
+"engaged. The panel\n"
+"discussions will focus on:"
+msgstr ""
+
+#: templates/asia-3.html:53
+msgid "possible ways of influencing policies in favour of the SMEs"
+msgstr ""
+
+#: templates/asia-3.html:54
+msgid "suggestions on how to reinforce the role and competence of BIOs"
+msgstr ""
+
+#: templates/asia-3.html:55
+msgid ""
+"usage of new approaches related to encouraging the growth and expansion "
+"of the SMEs in the target countries and best practice examples"
+msgstr ""
+
+#: templates/asia-3.html:61
+msgid ""
+"Work under this activity spans across two levels: Proactive awareness "
+"creation about\n"
+"the European T&C sector programmes on one hand, and motivation to project"
+" partners\n"
+"and other interested parties for collaboration on the other hand."
+msgstr ""
+
+#: templates/asia-3.html:66
+msgid ""
+"The website prepared during the execution of Activity 1.3 above will be "
+"used to\n"
+"provide access to internal and external sources, as it will be organised "
+"through a\n"
+"specifically designed reference model. This will be an effective Web-"
+"Based Working\n"
+"Space where information and knowledge can be shared between experts. This"
+"\n"
+"interactive collaboration environment will be used as a focal point for "
+"the\n"
+"dissemination activities. Apart from participation in awareness events "
+"about SMEs\n"
+"and presentations at seminars and workshops, this postal will be the most"
+" powerful\n"
+"tool for creating investment opportunities and awareness regarding "
+"project ideas\n"
+"and results."
+msgstr ""
+
+#: templates/asia-3.html:79
+msgid ""
+"The consortium plans to create a wide “User Group” by inviting interested"
+"\n"
+"stakeholders, to collaborate and interact within the framework of the "
+"project. Such\n"
+"stakeholders include Chambers of Commerce, SMEs, export promotion\n"
+"organisations, Ministries, etc."
+msgstr ""
+
+#: templates/asia-3.html:83
+msgid ""
+"The Consortium also plans to create a Roadmap for local SMEs, including a"
+"\n"
+"business terminology handbook and an export promotion and investment\n"
+"attraction handbook to facilitate the communication among stakeholders "
+"and\n"
+"offer them valuable guide for their work."
+msgstr ""
+
+#: templates/asia-3.html:91
+msgid ""
+"To enable a face-to-face meeting between potential buyers and customers "
+"in the\n"
+"sector, our Project will organise a brokerage event in Europe, together "
+"with the final\n"
+"conference of the project."
+msgstr ""
+
+#: templates/asia-3.html:95
+msgid ""
+"Overall, the aim of this Activity will be to establish a permanent "
+"structure that will act\n"
+"as a brokerage event bringing together the textile / clothing sector and "
+"the newest\n"
+"developments in the T&C areas in Europe and internationally. The "
+"consortium believes\n"
+"that the organisation of such an event every year can provide great "
+"benefits to the\n"
+"textile / clothing sector and can ensure the sustainability of the whole "
+"attempt.\n"
+"Work under this Activity involves the following:"
+msgstr ""
+
+#: templates/asia-3.html:103
+msgid ""
+"Set up an Organising Committee and a Secretariat to coordinate the "
+"preparation of\n"
+"the brokerage event for the textile / clothing sector in each of the "
+"target countries\n"
+"Identification of Participants-Invitation-Advertisement"
+msgstr ""
+
+#: templates/asia-3.html:106
+msgid ""
+"Invite attendees and provide with adequate input early enough to assure "
+"an active\n"
+"participation"
+msgstr ""
+
+#: templates/asia-3.html:115
+msgid ""
+"To ensure sustainability and ownership of project results, it is of "
+"critical importance to\n"
+"ensure a close monitoring and follow up of the activities envisaged in "
+"the project\n"
+"implementation. To this end, the Project will produce:"
+msgstr ""
+
+#: templates/asia-3.html:121
+msgid ""
+"Inception report within 4 weeks from the beginning of the project "
+"containing\n"
+"    the following: (i) clearly defined the objectives of the technical "
+"assistance, (ii) an\n"
+"    account of any changes agreed with the main Project Partner that were"
+" not specified\n"
+"    in the Guidelines, (iii) a detailed work plan and time schedule for "
+"the duration of the\n"
+"    project, (iv) an overall plan of action for the whole duration of the"
+" project (v) a\n"
+"    detailed description of the content of the individual components of "
+"the project and\n"
+"    the planned resources utilisation and (vi) a list of incidental costs"
+" analysed in detail.\n"
+"    The inception report coincides with Deliverable 1: Partnership "
+"Agreement (Activity\n"
+"    1.1)."
+msgstr ""
+
+#: templates/asia-3.html:131
+msgid ""
+"Monthly internal one page reports prepared by the CCP in order to give "
+"(i)\n"
+"    the follow up of the activities undertaken, (ii) a work plan for the "
+"following reporting\n"
+"    month, and (iii) information of any problem encountered during the "
+"implementation\n"
+"    of the activities."
+msgstr ""
+
+#: templates/asia-3.html:136
+msgid ""
+"Six-monthly Interim reports, prepared and submitted every six months. The"
+"\n"
+"    Interim reports will include: (i) a comparison of achievements "
+"against planned\n"
+"    activities and overall progress against the initial timetable, (ii) a"
+" summary of the\n"
+"    financial status of the implementation of the project, (iii) "
+"including a detailed\n"
+"    description of resources utilised against activities undertaken, and "
+"(iv) a review of\n"
+"    problems encountered during the implementation of the project "
+"activities and the\n"
+"    corrective measures taken."
+msgstr ""
+
+#: templates/asia-3.html:144
+msgid ""
+"Final report, to be submitted at the end of the project activities. The "
+"draft final\n"
+"    report is to be submitted one month before the end of the period of "
+"the\n"
+"    implementation of the tasks. The final report will contain: (i) a "
+"complete overview of\n"
+"    all activities implemented during the project, (ii) a summary of "
+"outputs, and the\n"
+"    identification of any major problems, which may have arisen during "
+"the performance\n"
+"    of the Contract, and (iii) an assessment of the outcomes of the "
+"project measured\n"
+"    against the stated project objectives and the indicators of "
+"achievement."
+msgstr ""
+
+#: templates/asia.html:16
+msgid "Project Landmarks"
+msgstr ""
+
+#: templates/asia.html:29
+msgid ""
+"\n"
+"Our strategy for the implementation of the present Project distinguishes "
+"the following\n"
+"three Components of Activities:\n"
+msgstr ""
+
+#: templates/asia.html:36
+msgid "Setting up the partnerships"
+msgstr ""
+
+#: templates/asia.html:38
+msgid ""
+"\n"
+"        Establishment of workable partnerships is a core initial step in "
+"the project\n"
+"        implementation. Under this Component, the ultimate aim will be to"
+" ensure co-\n"
+"        ordination of all activities towards exchanging of experiences "
+"and expertise;\n"
+"        transferring of know-how between European and Central Asian "
+"Institutions and\n"
+"        Professional Associations involved in the T&C supply chain; "
+"improving the international\n"
+"        collaboration and the creation of partnerships towards the "
+"identification and\n"
+"        implementation of successful business solutions.\n"
+"        "
+msgstr ""
+
+#: templates/asia.html:48
+msgid "Institutional capacity building activities"
+msgstr ""
+
+#: templates/asia.html:50
+msgid ""
+"\n"
+"        An important aspect here is the horizontal character of the "
+"instruments; our main\n"
+"        priority will be to establish appropriate facility mechanisms "
+"(e.g. through seminars,\n"
+"        visits, exchange of experience, workshops, training, etc.) that "
+"will improve the skills\n"
+"        and management capacities of the BIOs staff, enhance "
+"understanding of the fashion\n"
+"        cycles, ensure best practices and favour business cooperation "
+"agreements, mutual\n"
+"        trade, transfer of business know-how, product standards, "
+"investment flows, and\n"
+"        internationalisation. The ultimate aim for the BIOs will be to "
+"increase their capacity to\n"
+"        support SMEs and to influence policies in favour of them.\n"
+"        "
+msgstr ""
+
+#: templates/asia.html:61
+msgid "Disseminating activities"
+msgstr ""
+
+#: templates/asia.html:63
+msgid ""
+"\n"
+"        Our Methodological approach to this Component includes specific "
+"disseminating\n"
+"        activities, incorporating lobbying and advocacy functions to "
+"influence policies in favour\n"
+"        of SMEs needs in each of the target countries. The ultimate aim "
+"will be to increase\n"
+"        multiplier effects, including scope for replication and extension"
+" of the outcome of the\n"
+"        action.\n"
+"        "
+msgstr ""
+
+#: templates/asia.html:74
+msgid ""
+"\n"
+"\n"
+msgstr ""
+
+#: templates/root.html:8 templates/skeleton.html:54
+msgid "Central Asia Invest"
+msgstr ""
+
+#: templates/root.html:10
+msgid ""
+"\n"
+"Central Asia Invest (started in 2008) is an initiative within the "
+"European\n"
+"Commission’s overall strategy to support EU-Asian co-operation, designed "
+"to establish\n"
+"and consolidate bonds between European and Central Asian Business "
+"Intermediary\n"
+"Organizations (BIOs) in order to facilitate the transition towards a "
+"market economy.\n"
+"By developing Business Organizations, Central Asia Invest also aims at "
+"encouraging\n"
+"the establishment and/or internationalisation of existing Small and "
+"Medium Enterprises\n"
+"(SMEs).\n"
+msgstr ""
+
+#: templates/root.html:20
+msgid "Asian fashion industry"
+msgstr ""
+
+#: templates/root.html:21
+msgid ""
+"\n"
+"<p class=\"lora\">\n"
+"Asia is a crucial partner for the EU, politically and economically and "
+"there is important\n"
+"scope for promoting the development of private sector by encouraging the "
+"growth and\n"
+"expansion of the small and medium enterprises. On the other hand, most "
+"Central\n"
+"Asian SMEs have fragmented knowledge of business sectoral knowledge, in "
+"particular\n"
+"of strategic marketing, appropriate marketing-mixes, access to "
+"information and\n"
+"capital. In conjunction with the sometimes low-level vocational "
+"education, these SMEs\n"
+"face difficulties to produce competitive quality and at the same time "
+"they remain\n"
+"geographically restricted.\n"
+msgstr ""
+
+#: templates/root.html:33
+msgid "Business Intermediary Organisations"
+msgstr ""
+
+#: templates/root.html:35
+msgid ""
+"\n"
+"In this context, Business Intermediary Organisations can play a key role "
+"in the reform\n"
+"process towards a market economy, contributing to civil society "
+"development and to\n"
+"the creation of new employment opportunities and income. By improving "
+"their\n"
+"capacity to assist small businesses and to create bridges between the "
+"governments\n"
+"and the private sector, they will contribute to the eradication of "
+"poverty and to the\n"
+"gradual democratic and economic transition of these countries. This is "
+"why the Central\n"
+"Asia Invest programme supports Business Intermediary Organisations.\n"
+msgstr ""
+
+#: templates/root.html:45
+msgid "Project Goal"
+msgstr ""
+
+#: templates/root.html:47
+msgid ""
+"\n"
+"The ultimate scope of the present project is to achieve productive "
+"entrepreneurship,\n"
+"which is crucial to local economic growth, employment creation, "
+"internationalisation\n"
+"and innovation. Improving entrepreneurial activity, through "
+"internationalisation of the\n"
+"textile / clothing / fashion sector, is expected to create jobs, drive "
+"efficient resource\n"
+"use and accelerate the process of generating, diffusing and applying "
+"innovative ideas\n"
+"and concepts, thus providing concrete and desired solutions for the "
+"Project targeted\n"
+"beneficiaries and the society at large.\n"
+msgstr ""
+
+#: templates/root.html:57
+msgid "Developing Mechanisms"
+msgstr ""
+
+#: templates/root.html:59
+msgid ""
+"\n"
+"To address the above challenges, the present Project focuses on "
+"developing specific\n"
+"mechanisms that will provide legal and institutional capacity building to"
+" the Central\n"
+"Asia Business Intermediary Organisations (BIOs) and SMEs, towards "
+"strengthening\n"
+"links between themselves, but also with the EU, encourage new flows of "
+"investment\n"
+"for the Central Asia Countries and create a public-private dialogue for "
+"strengthening\n"
+"the integration of SMEs into the networking mechanisms, thus aiming at "
+"generally\n"
+"improving the business environment.\n"
+msgstr ""
+
+#: templates/skeleton.html:53
 msgid "Homepage"
 msgstr "Da gaspaza"
 
-#: apps/fashion/handlers.py:10
-msgid "koko"
-msgstr "From russia with love"
+#: templates/skeleton.html:55
+msgid "News"
+msgstr ""
+
+#: templates/skeleton.html:57
+msgid "Partners Profiles"
+msgstr ""
+
+#: templates/skeleton.html:58
+msgid "Contacts"
+msgstr ""
+
+#: templates/skeleton.html:80
+msgid "No recent articles"
+msgstr ""
+
+#: templates/skeleton.html:96
+msgid "No recent events"
+msgstr ""
+
+#~ msgid "koko"
+#~ msgstr "From russia with love"
 
