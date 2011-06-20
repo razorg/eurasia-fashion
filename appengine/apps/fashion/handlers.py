@@ -265,7 +265,7 @@ class NewsHandler(ServeBasics, Jinja2Mixin):
         ServeBasics.get(self)
         return self.render_response('articles.html', **self.context)
 
-class SetLangHandler(RequestHandler, Jinja2Mixin):
+class SetLangHandler(RequestHandler):
     def get(self):
         lang = self.request.args.get('lang')
         if not lang:
