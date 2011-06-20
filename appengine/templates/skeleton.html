@@ -47,16 +47,19 @@ $(window).load(function() {
             </div>
         </div>
     </div>
-    <div id="menu" class="span-24 last">
+    <div id="menu" style="position:relative;" class="span-24 last">
         {% block menu %}
         <ul class="span-24 last">
-            <li style="margin-left:15%;"><a href="/">{{ _('Homepage') }}</a></li>
-            <li><a href="/asia">{{ _('Central Asia Invest') }}</a></li>
-            <li><a href="/news">{{ _('News') }}</a></li>
-            <li><a href="/events">{{ _('Events') }}</a></li>
-            <li><a href="/partners">{{ _('Partners Profiles') }}</a></li>
+            <li style="margin-left:15%;"><a href="/">Homepage</a></li>
+            <li><a href="/asia">Central Asia Invest</a></li>
+            <li><a href="/news">News</a></li>
+            <li><a href="/events">Events</a></li>
+            <li><a href="/partners">Partners Profiles</a></li>
             <!--<li><a href="#">{{ _('Contacts') }}</a></li>-->
         </ul>
+        <div style="position:absolute;right:5px;top:8px;">
+            <a href="/set_lang?lang=en_US">US</a> | <a href="/set_lang?lang=ru_RU">RU</a>
+        </div>
         {% endblock %}
     </div>
     <div class="prepend-5 span-19 last hmenu">
@@ -109,7 +112,7 @@ $(window).load(function() {
         </div>
     </div>
 </div>
-<div class="span-19 last" id="content">
+<div class="span-19 last" id="content" style="width:718px;">
     {% block above_content %}{% endblock %}
     {% block content %}
     {% endblock %}
