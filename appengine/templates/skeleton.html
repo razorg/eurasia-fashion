@@ -1,3 +1,5 @@
+{% set style_square = "-moz-border-radius-topright: 0px;-moz-border-radius-bottomright: 0px;-webkit-border-top-right-radius: 0px;-webkit-border-bottom-right-radius: 0px;" %}
+{% set style_circle = "-moz-border-radius-topright: 10px;-moz-border-radius-bottomright: 10px;-webkit-border-top-right-radius: 10px;-webkit-border-bottom-right-radius: 10px;" %}
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -11,33 +13,26 @@
 <link rel="stylesheet" href="/static/css/jquery-ui.css" type="text/css">
 <link rel="stylesheet" href="/static/css/nivo-slider.css" type="text/css" media="screen" />
 
-<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>
+<!--<link href='http://fonts.googleapis.com/css?family=Quattrocento' rel='stylesheet' type='text/css'>-->
+<!--<link href='http://fonts.googleapis.com/css?family=EB+Garamond&subset=cyrillic,latin&v1' rel='stylesheet' type='text/css'>-->
+<link href='http://fonts.googleapis.com/css?family=Didact+Gothic&subset=cyrillic,latin&v1' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript" src="/static/js/jquery.js"></script>
+<script type="text/javascript" src="/static/js/jquery.cookie.js"></script>
 <script type="text/javascript" src="/static/js/jquery-ui.js"></script>
 <script type="text/javascript" src="/static/js/fashion.js"></script>
 <script src="/static/js/jquery.nivo.slider.pack.js" type="text/javascript"></script>
 
 {% block head %}{% endblock %}
-<script type="text/javascript">
-$(window).load(function() {
-    $('#slider').nivoSlider({
-        controlNav:false,
-         prevText: '',
-         nextText: '',
-         pauseTime:5000,
-    });
-});
-</script>
 </head>
 <body>
 <div class="container">
 <div class="span-24 last" id="header">
     <div id="head-wow" class="span-24">
-        <div class="span-6">
+        <div class="prepend-1 span-6">
                 <img style="margin-top:18px;" src="/static/images/fashion/logo-ef.png" alt="Eurasia Fashion">
         </div>
-        <div class="prepend-1 span-16 last" style="float:left;width:606px;border-left:1px solid gray;">
+        <div class="prepend-1 span-16 last" style="float:left;width:606px;">
             <div class="wrap_black">
                 <div id="slider">
                 <img src="/static/images/fashion/top3.png">
@@ -50,16 +45,14 @@ $(window).load(function() {
     <div id="menu" style="position:relative;" class="span-24 last">
         {% block menu %}
         <ul class="span-24 last">
-            <li style="margin-left:15%;"><a href="/">Homepage</a></li>
+            <li><a href="/">Homepage</a></li>
             <li><a href="/asia">Central Asia Invest</a></li>
             <li><a href="/news">News</a></li>
             <li><a href="/events">Events</a></li>
             <li><a href="/partners">Partners Profiles</a></li>
-            <!--<li><a href="#">{{ _('Contacts') }}</a></li>-->
+            <li style="float:right;"><a id="ru" style="{{style_circle}}display:inline;float:right;" href="/set_lang?lang=ru_RU">RU</a></li>
+            <li style="float:right;"><a id="en"  style="{{style_square}}display:inline;float:right;"  href="/set_lang?lang=en_US">EN</a></li>
         </ul>
-        <div style="position:absolute;right:5px;top:8px;">
-            <a href="/set_lang?lang=en_US">US</a> | <a href="/set_lang?lang=ru_RU">RU</a>
-        </div>
         {% endblock %}
     </div>
     <div class="prepend-5 span-19 last hmenu">
@@ -68,7 +61,7 @@ $(window).load(function() {
     </div>
     {% block header_line %}{% endblock %}
 </div>
-<div class="span-5" id="col1">
+<div class="span-6" id="col1">
     {% block col1 %}
     <div class="sidebar-block">
         <div class="sidebar-inner">
@@ -112,17 +105,18 @@ $(window).load(function() {
         </div>
     </div>
 </div>
-<div class="span-19 last" id="content" style="width:718px;">
+<div class="span-17 last" id="content">
     {% block above_content %}{% endblock %}
     {% block content %}
     {% endblock %}
 </div>
 <hr>
-<div class="span-24 last" id="footer">
-    <div class="span-24 last">The contents of this website reflect the views of the author.
-    The European Commission is not responsible for any use that may be made thereof.</div>
-    <div class="span-24 last">EUROPEAN UNION, European Social Fund, Article 6, Innovative Measures.</div>
-    <div class="prepend-11 span-2 append-11 last"><img src="/static/images/fashion/eu.png" alt="Euriopean Union"></div>
+<div class="prepend-2 span-22 last" id="footer">
+    <div class="span-2"><img src="/static/images/fashion/eu.png" alt="Euriopean Union"></div>
+    <div class="span-20 last">The contents of this website reflect the views of the author.
+    The European Commission is not responsible for any use that may be made thereof.
+    <br>
+    EUROPEAN UNION, European Social Fund, Article 6, Innovative Measures.</div>
 </div>
 </div>
 </body>
