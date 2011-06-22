@@ -43,7 +43,9 @@ body {
     border-radius: 6px;
 }
 
-    
+.sidebar-block a {
+    color: black;
+}
 .fh {
     height:100%;
 }
@@ -105,7 +107,7 @@ body {
     border-radius: 5px;
     border: 1px solid silver;
     background: white;
-    padding: 25px 15px 15px 15px;
+    padding: 5px 15px 15px 15px;
     overflow: hidden;
     padding-bottom: 0em;
     margin-bottom: 10px;
@@ -128,7 +130,8 @@ ul.circles li {
 }
 #content h1, #content h2, #content h3 {
     font-family: Times New Roman;
-    text-shadow: 0px 2px 3px #666;
+    text-shadow: 0px 1px 2px #666;
+    border-bottom: 1px solid #808080;
 }
 ul.presentation li {
     font-weight: bold;
