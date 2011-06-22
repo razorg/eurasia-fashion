@@ -19,8 +19,8 @@ $(document).ready(function() {
     else if (path.search('^/partners') != -1)
         partners.addClass('active');
     function fix(elem) {
-        elem.css('background-image', '-moz-linear-gradient(top, #929292, #545454)');
-        elem.css('background-image', '-webkit-gradient(linear, 0% 0%, 0% 100%, from(#929292), to(#545454))');
+        elem.css('background-image', '-moz-linear-gradient(center top,rgb(255,198,138) 43%,rgb(255,170,79) 72%)');
+        elem.css('background-image', '-webkit-gradient(linear,right top,right bottom,color-stop(0.43, rgb(255,198,138)),color-stop(0.72, rgb(255,170,79)))');
     }
     if (lang == 'en_US')
         fix(en);
