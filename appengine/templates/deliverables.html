@@ -16,7 +16,7 @@
     <tbody>
     {% for doc in documents %}
         <tr>
-            <td>{{ doc.title }}</td>
+            <td><a href="/deliverable?id={{doc.key().id() }}">{{ doc.title }}</a></td>
             <td><a href="/admin/documents/get?id={{ doc.key().id() }}">{{ doc.file_name }}</td>
         </tr>
     {% endfor %}

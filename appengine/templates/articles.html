@@ -2,13 +2,21 @@
 
 {% block content %}
 {% if not articles %}
-    <p class="notice">{{ _('There are no articles available') }}</p>
+    <p class="info">{{ _('There are no articles') }}</p>
 {% else %}
+    <table border="0" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th class="span-5 append-14 last">{{ _('Title') }}</th>
+        </tr>
+    </thead>
+    <tbody>
     {% for article in articles %}
-    <div class="span-19 last article">
-        <h3><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h3>
-    </div>
-    <hr>
+        <tr>
+            <td><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></td>
+        </tr>
     {% endfor %}
+    </tbody>
+    </table>
 {% endif %}
 {% endblock %}

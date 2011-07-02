@@ -25,8 +25,12 @@
             <input type="text" id="title" name="title">
         </p>
         <p>
-            <label class="span-19 last" for="desc">{{ _('Article content') }}</label>
+            <label class="span-19 last" for="desc">{{ _('Article content in English') }}</label>
             <textarea class="ckeditor" id="article" name="article"></textarea>
+        </p>
+        <p>
+            <label class="span-19 last" for="desc">{{ _('Article content in Russian') }}</label>
+            <textarea class="ckeditor" id="article_ru" name="article_ru"></textarea>
         </p>
         <p><input type="submit" value="{{ _('Submit') }}"></p>
     </fieldset>

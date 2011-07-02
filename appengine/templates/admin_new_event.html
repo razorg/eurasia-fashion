@@ -27,8 +27,12 @@ $(document).ready(function() {
         <label class="span-19 last" for="title">Event title</label>
         <input type="text" name="title" id="title">
     <p>
-        <label class="span-19 last" for="desc">Event description</label>
+        <label class="span-19 last" for="desc">Event description in English</label>
         <textarea class="ckeditor" name="desc" id="desc"></textarea>
+    </p>
+    <p>
+        <label class="span-19 last" for="desc">Event description in Russian</label>
+        <textarea class="ckeditor" name="desc_ru" id="desc_ru"></textarea>
     </p>
 </fieldset>
 <input type="submit" value="{{ _('Submit') }}">

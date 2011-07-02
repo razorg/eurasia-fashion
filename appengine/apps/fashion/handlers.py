@@ -29,11 +29,12 @@ class AsiaHandler3(RequestHandler, Jinja2Mixin):
 
 class ServeBasics(RequestHandler):
     def get(self):
-        articles = Article.all().fetch(100)
-        events = Event.all().fetch(100)
+        articles = Article.all().order('-date').fetch(3)
+        events = Event.all().order('-date').fetch(3)
         self.context = {
             'articles' : articles,
-            'events' : events
+            'events' : events,
+            'lang' : self.request.cookies.get(self.i18n.config['locale_request_lookup'][0][1])
         }
 
 class RootHandler(ServeBasics, Jinja2Mixin):
@@ -57,13 +58,15 @@ class AdminHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin.html')
 
 class NewDocHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         return self.render_response('admin_new_doc.html')
     
     def post(self):
         title = self.request.form.get('title')
         desc = self.request.form.get('desc')
+        desc_ru = self.request.form.get('desc_ru')
         file = self.request.files.get('file')
         
         if not title:
@@ -72,12 +75,13 @@ class NewDocHandler(RequestHandler, Jinja2Mixin):
         if not file:
             return self.render_response('admin_new_doc.html', **{'no_file':True})
         
-        doc = Document(title=title, desc=desc, file_name=file.filename, file=db.Blob(file.read()))
+        doc = Document(title=title, desc=desc, desc_ru=desc_ru, file_name=file.filename, file=db.Blob(file.read()))
         doc.put()
         return self.redirect('/admin/documents?new=1')
 
 class NewArticleHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         return self.render_response('admin_new_article.html')
     
@@ -85,23 +89,27 @@ class NewArticleHandler(RequestHandler, Jinja2Mixin):
     def post(self):
         title = self.request.form.get('title')
         article = self.request.form.get('article')
-        if (not title) or (not article):
-            return Response('no title or article')
+        article_ru = self.request.form.get('article_ru')
         
-        article = Article(title=title, article=article)
+        if (not title) or (not article) or (not article_ru):
+            return Response('no title or article content')
+        
+        article = Article(title=title, article=article, article_ru=article_ru)
         article.put()
         return self.redirect('/admin/articles?new=1')
 
 class NewEventHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         return self.render_response('admin_new_event.html')
     
     def post(self):
         title = self.request.form.get('title')
         desc = self.request.form.get('desc')
+        desc_ru = self.request.form.get('desc_ru')
         date = self.request.form.get('date')
-        if (not title) or (not desc) or (not date):
+        if (not title) or (not date):
             return self.render_response('admin_new_event.html', **{'not_all':True})
         
         try:
@@ -109,14 +117,15 @@ class NewEventHandler(RequestHandler, Jinja2Mixin):
         except ValueError:
             return Response('not a valid date')
         
-        e = Event(title=title, desc=desc, date=d)
+        e = Event(title=title, desc=desc, desc_ru=desc_ru, date=d)
         e.put()
         return self.redirect('/admin/events?new=1')
 
 class ListDocsHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
-        documents = Document.all().fetch(300)
+        documents = Document.all().order('-date').fetch(300)
         context = {
             'new' : self.request.args.get('new'),
             'documents' : documents
@@ -124,9 +133,10 @@ class ListDocsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_list_doc.html', **context)
 
 class ListArticlesHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
-        articles = Article.all().fetch(300)
+        articles = Article.all().order('-date').fetch(300)
         context = {
             'new' : self.request.args.get('new'),
             'articles' : articles
@@ -134,7 +144,8 @@ class ListArticlesHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_list_articles.html', **context)
 
 class ListEventsHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         events = Event.all().fetch(300)
         context = {
@@ -144,7 +155,8 @@ class ListEventsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_list_events.html', **context)
 
 class AdminManageEventsHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         events = Event.all().fetch(300)
         context = {
@@ -154,9 +166,10 @@ class AdminManageEventsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_events.html', **context)
 
 class AdminManageDocumentsHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
-        documents = Document.all().fetch(300)
+        documents = Document.all().order('-date').fetch(300)
         context = {
             'documents' : documents,
             'new' : self.request.args.get('new')
@@ -164,7 +177,8 @@ class AdminManageDocumentsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_documents.html', **context)
 
 class AdminManageArticlesHandler(RequestHandler, Jinja2Mixin):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         articles = Article.all().fetch(300)
         context = {
@@ -174,7 +188,8 @@ class AdminManageArticlesHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_articles.html', **context)
 
 class DeleteDocHandler(RequestHandler):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -186,7 +201,8 @@ class DeleteDocHandler(RequestHandler):
         return self.redirect('/admin/documents?del=1')
 
 class DeleteEventHandler(RequestHandler):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -203,7 +219,8 @@ class PartnersHandler(ServeBasics, Jinja2Mixin):
         return self.render_response('partners.html', **self.context)
 
 class DeleteArticleHandler(RequestHandler):
-    middleware = [LoginRequiredMiddleware]
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -249,6 +266,21 @@ class ShowArticleHandler(ServeBasics, Jinja2Mixin):
         self.context['article'] = article
         return self.render_response('article.html', **self.context)
 
+class ShowDeliverableHandler(ServeBasics, Jinja2Mixin):
+    def get(self):
+        ServeBasics.get(self)
+        id = int(self.request.args.get('id'))
+        if not id:
+            return Response('no id')
+        
+        deliverable = Document.get_by_id(id)
+        self.context['deliverable'] = deliverable
+        
+        if not deliverable:
+            return Response('no deliverable found')
+            
+        return self.render_response('deliverable.html', **self.context)
+
 class ShowEventHandler(ServeBasics, Jinja2Mixin):
     def get(self):
         ServeBasics.get(self)
@@ -271,7 +303,7 @@ class NewsHandler(ServeBasics, Jinja2Mixin):
 class DeliverablesHandler(ServeBasics, Jinja2Mixin):
     def get(self):
         ServeBasics.get(self)
-        documents = Document.all().fetch(300)
+        documents = Document.all().order('-date').fetch(300)
         self.context['documents'] = documents
         return self.render_response('deliverables.html', **self.context)
 

@@ -2,5 +2,10 @@
 
 {% block content %}
 <h2 class="title">{{ article.title }}</h2>
-{{ article.article }}
+{% if lang == 'en_US' %}
+    {{ article.article }}
+{% elif lang == 'ru_RU' %}
+    {{ article.article_ru }}
+{% endif %}
+
 {% endblock %}
