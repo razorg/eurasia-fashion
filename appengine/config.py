@@ -1,16 +1,19 @@
 # -*- coding: utf-8 -*-
+from tipfy.sessions import SessionMiddleware
 """App configuration."""
 
 config = {
     'tipfy' : {
         'middleware': [
-            'tipfy.ext.i18n.I18nMiddleware'
+            SessionMiddleware(),
+            'tipfy.ext.i18n.I18nMiddleware',
         ],
+        'auth_store_class': 'tipfy.auth.MultiAuthStore',
         'apps_installed' : ['apps.eurasia-fashion']
     },
     'tipfyext.jinja2' : {
         'environment_args' : {
-            'extensions' : ['jinja2.ext.i18n']
+            'extensions' : ['jinja2.ext.i18n',]
         }
     },
     'tipfy.i18n' : {

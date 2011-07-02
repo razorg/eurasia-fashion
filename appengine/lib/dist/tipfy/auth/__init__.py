@@ -470,7 +470,7 @@ def create_session_id():
 def _login_required(handler):
     """Implementation for login_required and LoginRequiredMiddleware."""
     auth = handler.auth
-
+    
     if not auth.session:
         return handler.redirect(auth.login_url())
 

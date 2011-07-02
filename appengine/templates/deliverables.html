@@ -1,0 +1,26 @@
+{% extends 'skeleton.html' %}
+
+{% block content %}
+<a href="/admin">Private Space</a>
+<br><br>
+{% if not documents %}
+    <p class="info">{{ _('There are no uploaded documents') }}</p>
+{% else %}
+    <table border="0" cellspacing="0" cellpadding="0">
+    <thead>
+        <tr>
+            <th class="span-12">{{ _('Title') }}</th>
+            <th class="span-5 append-2 last">{{ _('File') }}</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for doc in documents %}
+        <tr>
+            <td>{{ doc.title }}</td>
+            <td><a href="/admin/documents/get?id={{ doc.key().id() }}">{{ doc.file_name }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+    </table>
+{% endif %}
+{% endblock %}

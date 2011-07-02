@@ -5,7 +5,8 @@ from apps.fashion.models import Document, Article, Event
 from tipfy.app import Response, redirect
 from tipfy.handler import RequestHandler
 from tipfyext.jinja2 import Jinja2Mixin
-from tipfy.auth import login_required
+from tipfy.auth import login_required, LoginRequiredMiddleware, UserRequiredMiddleware
+from tipfy.sessions import SessionMiddleware
 from datetime import datetime
 
 class AsiaHandler(RequestHandler, Jinja2Mixin):
@@ -41,6 +42,8 @@ class RootHandler(ServeBasics, Jinja2Mixin):
         return self.render_response('root.html', **self.context)
 
 class AdminLoginHandler(ServeBasics, Jinja2Mixin):
+    middleware = [SessionMiddleware()]
+    
     def get(self):
         ServeBasics.get(self)
         self.context['retry'] = self.request.args.get('retry')
@@ -48,12 +51,13 @@ class AdminLoginHandler(ServeBasics, Jinja2Mixin):
         return self.render_response('admin_login.html', **self.context)
 
 class AdminHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
-    def get(self):
+    middleware = [SessionMiddleware(), LoginRequiredMiddleware()]
+    
+    def get(self, **kwargs):
         return self.render_response('admin.html')
 
 class NewDocHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         return self.render_response('admin_new_doc.html')
     
@@ -73,7 +77,7 @@ class NewDocHandler(RequestHandler, Jinja2Mixin):
         return self.redirect('/admin/documents?new=1')
 
 class NewArticleHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         return self.render_response('admin_new_article.html')
     
@@ -89,7 +93,7 @@ class NewArticleHandler(RequestHandler, Jinja2Mixin):
         return self.redirect('/admin/articles?new=1')
 
 class NewEventHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         return self.render_response('admin_new_event.html')
     
@@ -110,7 +114,7 @@ class NewEventHandler(RequestHandler, Jinja2Mixin):
         return self.redirect('/admin/events?new=1')
 
 class ListDocsHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         documents = Document.all().fetch(300)
         context = {
@@ -120,7 +124,7 @@ class ListDocsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_list_doc.html', **context)
 
 class ListArticlesHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         articles = Article.all().fetch(300)
         context = {
@@ -130,7 +134,7 @@ class ListArticlesHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_list_articles.html', **context)
 
 class ListEventsHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         events = Event.all().fetch(300)
         context = {
@@ -140,7 +144,7 @@ class ListEventsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_list_events.html', **context)
 
 class AdminManageEventsHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         events = Event.all().fetch(300)
         context = {
@@ -150,7 +154,7 @@ class AdminManageEventsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_events.html', **context)
 
 class AdminManageDocumentsHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         documents = Document.all().fetch(300)
         context = {
@@ -160,7 +164,7 @@ class AdminManageDocumentsHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_documents.html', **context)
 
 class AdminManageArticlesHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         articles = Article.all().fetch(300)
         context = {
@@ -170,7 +174,7 @@ class AdminManageArticlesHandler(RequestHandler, Jinja2Mixin):
         return self.render_response('admin_articles.html', **context)
 
 class DeleteDocHandler(RequestHandler):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -182,7 +186,7 @@ class DeleteDocHandler(RequestHandler):
         return self.redirect('/admin/documents?del=1')
 
 class DeleteEventHandler(RequestHandler):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -199,7 +203,7 @@ class PartnersHandler(ServeBasics, Jinja2Mixin):
         return self.render_response('partners.html', **self.context)
 
 class DeleteArticleHandler(RequestHandler):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
+    middleware = [LoginRequiredMiddleware]
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -217,7 +221,6 @@ class ShowEventsHandler(ServeBasics, Jinja2Mixin):
         return self.render_response('events.html', **self.context);
         
 class GetDocHandler(RequestHandler, Jinja2Mixin):
-    middleware = ['tipfy.auth.LoginRequiredMiddleware']
     def get(self):
         id = int(self.request.args.get('id'))
         if not id:
@@ -264,6 +267,13 @@ class NewsHandler(ServeBasics, Jinja2Mixin):
     def get(self):
         ServeBasics.get(self)
         return self.render_response('articles.html', **self.context)
+
+class DeliverablesHandler(ServeBasics, Jinja2Mixin):
+    def get(self):
+        ServeBasics.get(self)
+        documents = Document.all().fetch(300)
+        self.context['documents'] = documents
+        return self.render_response('deliverables.html', **self.context)
 
 class SetLangHandler(RequestHandler):
     def get(self):

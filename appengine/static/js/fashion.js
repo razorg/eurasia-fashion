@@ -3,7 +3,8 @@ $(document).ready(function() {
     var asia = $('#menu ul li a:eq(1)');
     var news = $('#menu ul li a:eq(2)');
     var events = $('#menu ul li a:eq(3)');
-    var partners = $('#menu ul li a:eq(4)');
+    var deliverables = $('#menu ul li a:eq(4)');
+    var partners = $('#menu ul li a:eq(5)');
     var path = document.location.pathname;
     var en = $('#en');
     var ru = $('#ru');
@@ -16,6 +17,8 @@ $(document).ready(function() {
         news.addClass('active');
     else if (path.search('^/events') != -1)
         events.addClass('active');
+    else if (path.search('^/deliverables') != -1)
+        deliverables.addClass('active');
     else if (path.search('^/partners') != -1)
         partners.addClass('active');
     function fix(elem) {

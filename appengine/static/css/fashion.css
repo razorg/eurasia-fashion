@@ -11,8 +11,12 @@ body {
     
 }
 .span-19 {
-    width:710px;
+    width:678px;
 }
+.span-17 {
+    width:678px;
+}?
+
 #header {
     padding-top: 15px;
     z-index: 1;
@@ -113,6 +117,7 @@ body {
     margin-bottom: 10px;
     width:678px;
     text-align:justify;
+    min-height:600px;
 }
 ul.page_links li {
     list-style-type: circle;
