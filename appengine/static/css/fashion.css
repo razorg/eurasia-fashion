@@ -15,7 +15,7 @@ body {
 }
 .span-17 {
     width:678px;
-}?
+}
 
 #header {
     padding-top: 15px;
@@ -74,6 +74,19 @@ body {
     overflow: hidden;
     position: relative;
 }
+.sidebar-inner img {
+    margin-top:5px;
+}
+#flags img {
+    border:1px solid black;
+}
+#last_col {
+    margin-bottom:25px;
+}
+.center {
+    text-align:center;
+}
+
 #logo {
     height:0px;
     top:-95px;
