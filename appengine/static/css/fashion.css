@@ -244,18 +244,23 @@ ol.items li {
 /********************/
 #menu li a.purple:link, #menu li a.purple:visited {
     background-image: -webkit-gradient(
-    linear,
-    right top,
-    right bottom,
-    color-stop(0.43, rgb(255,212,166)),
-    color-stop(0.72, rgb(255,183,105))
-);
-background-image: -moz-linear-gradient(
-    center top,
-    rgb(255,212,166) 43%,
-    rgb(255,183,105) 72%
-);
-padding: 12px 10px 12px 10px;
+        linear,
+        right top,
+        right bottom,
+        color-stop(0.43, rgb(255,212,166)),
+        color-stop(0.72, rgb(255,183,105))
+    );
+    background-image: -moz-linear-gradient(
+        center top,
+        rgb(255,212,166) 43%,
+        rgb(255,183,105) 72%
+    );
+    /* for ie8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFD4A6, endColorstr=#FFB769)";
+    /* for ie5-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#FFD4A6, endColorstr=#FFB769);
+    padding: 12px 10px 12px 10px;
+    
 }
 #menu	{
     
@@ -289,6 +294,10 @@ padding: 12px 10px 12px 10px;
 	/* Background Gradient */
     background-image: -moz-linear-gradient(top, #b4b4b4, #707070);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#b4b4b4), to(#707070));
+    /* for ie8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#b4b4b4, endColorstr=#707070)";
+    /* for ie5-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#b4b4b4, endColorstr=#707070);
 }
 #menu li	{
 	float: left;
@@ -311,6 +320,10 @@ padding: 12px 10px 12px 10px;
 	/* Background Gradient */
     background-image: -moz-linear-gradient(top, #cacaca, #848484);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#cacaca), to(#848484));
+    /* for ie8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#cacaca, endColorstr=#848484)";
+    /* for ie5-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#cacaca, endColorstr=#848484);
 }
 #menu li a:hover	{
 	cursor: pointer;
@@ -320,6 +333,10 @@ padding: 12px 10px 12px 10px;
 	/* Background Gradient */
     background-image: -moz-linear-gradient(top, #929292, #545454);
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#929292), to(#545454));
+    /* for ie8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#929292, endColorstr=#545454)";
+    /* for ie5-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#929292, endColorstr=#545454);
 }
 #menu li:first-child a, #menu ul {	
 	/* Rounded Corners */
@@ -340,6 +357,10 @@ a.active:link, a.active:active, a.active:visited	{
 	text-shadow: 0px -1px 1px #000!important;
     background-image: -moz-linear-gradient(top, #444, #666)!important;
     background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#444), to(#666))!important;
+    /* for ie8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#444, endColorstr=#666)";
+    /* for ie5-7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#444, endColorstr=#666);
 	
 	/* Box Shadow */
 	box-shadow: inset 0 0 10px #000;
