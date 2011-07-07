@@ -1,5 +1,10 @@
 {% extends 'admin.html' %}
 
+{% block head %}
+{{super()}}
+<script type="text/javascript" src="/static/js/ckeditor/ckeditor.js"></script>
+{% endblock %}
+
 {% block content %}
 <p>
     {% trans %}
@@ -21,7 +26,7 @@
         </p>
         <p>
             <label class="span-19 last" for="desc">{{ _('Document description') }}</label>
-            <textarea id="desc" name="desc"></textarea>
+            <textarea class="ckeditor" id="desc" name="desc"></textarea>
         </p>
         <p>
             <label class="span-19 last" for="file">{{ _('File') }}</label>

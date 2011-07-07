@@ -1,5 +1,10 @@
 {% extends 'admin.html' %}
 
+{% block head %}
+{{ super() }}
+<script type="text/javascript" src="/static/js/ckeditor/ckeditor.js"></script>
+{% endblock %}
+
 {% block content %}
 <p>
     {% trans %}
@@ -21,7 +26,7 @@
         </p>
         <p>
             <label class="span-19 last" for="desc">{{ _('Article content') }}</label>
-            <textarea id="article" name="article"></textarea>
+            <textarea class="ckeditor" id="article" name="article"></textarea>
         </p>
         <p><input type="submit" value="{{ _('Submit') }}"></p>
     </fieldset>

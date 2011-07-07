@@ -7,7 +7,6 @@
     {% for article in articles %}
     <div class="span-19 last article">
         <h3><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h3>
-        <p>{{ article.article }}</p>
     </div>
     <hr>
     {% endfor %}

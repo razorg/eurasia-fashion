@@ -5,6 +5,7 @@ from apps.fashion.handlers import RootHandler
 
 rules = [
     Rule('/', name='root', handler='apps.fashion.handlers.RootHandler'),
+    Rule('/partners', name='partners', handler='apps.fashion.handlers.PartnersHandler'),
     Rule('/set_lang', name='set_lang', handler='apps.fashion.handlers.SetLangHandler'),
     Rule('/asia', name='asia', handler='apps.fashion.handlers.AsiaHandler'),
     Rule('/asia/partnerships', name='asia-partnerships', handler='apps.fashion.handlers.AsiaHandler1'),

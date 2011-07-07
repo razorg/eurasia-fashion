@@ -6,9 +6,12 @@ body {
 }
 #header {
     padding-top: 15px;
+    z-index: 1;
+    position: relative;
 }
 #menu {
-    font-size: 1.3em;
+    font-size: 1.6em;
+    margin-top:30px;
 }
 .sidebar-block {
     background: #F2F2F2;
@@ -28,6 +31,17 @@ body {
     overflow: hidden;
     position: relative;
 }
+#logo {
+    height:0px;
+    top:-80px;
+    position:relative;
+    left:-105px;
+    bottom:0px;
+}
+.wrapper {
+    margin:1.1em 0 1.1em 1em;
+}
+
 .additional {
     margin-top: 15px;
 }
@@ -37,6 +51,7 @@ body {
     font-size: 16px;
     line-height: 30px;
     margin: 0;
+    margin-bottom:10px;
     padding: 0 5px 2px;
     text-shadow: 1px 1px 1px #AAA;
 }
@@ -69,6 +84,10 @@ ul.page_links li {
 ul.page_links li a {
     font-size:0.87em;
     color:gray;
+}
+ul.circles li {
+    list-style-type: circle;
+    list-style-position:inside;
 }
 #content p {
     font-family: Verdana;

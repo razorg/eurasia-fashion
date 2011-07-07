@@ -4,7 +4,6 @@
 <title>{% block title %}Eurasia Fashion{% endblock %}</title>
 <meta charset="UTF-8">
 <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
-<link href='http://fonts.googleapis.com/css?family=Mako' rel='stylesheet' type='text/css'>
 <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.2.0/build/cssreset/reset-min.css">
 <link rel="stylesheet" href="/static/css/blueprint/screen.css" type="text/css" media="screen, projection"> 
 <link rel="stylesheet" href="/static/css/blueprint/print.css" type="text/css" media="print">
@@ -19,7 +18,6 @@
 <body>
 <div class="container">
 <div class="span-24 last" id="header">
-    <p class="span-24 last" id="logo_text"><img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">Eurasia's fashion industry</p>
     <div id="menu" class="prepend-5 span-19 last hmenu">
         {% block menu %}
         <ul>
@@ -27,8 +25,8 @@
             <li><a href="/asia">{{ _('Central Asia Invest') }}</a></li>
             <li><a href="/news">{{ _('News') }}</a></li>
             <li><a href="/events">{{ _('Events') }}</a></li>
-            <li><a href="#">{{ _('Partners Profiles') }}</a></li>
-            <li><a href="#">{{ _('Contacts') }}</a></li>
+            <li><a href="/partners">{{ _('Partners Profiles') }}</a></li>
+            <!--<li><a href="#">{{ _('Contacts') }}</a></li>-->
         </ul>
         {% endblock %}
     </div>
@@ -37,6 +35,9 @@
         {% endblock %}
     </div>
     {% block header_line %}{% endblock %}
+    <div id="logo" class="span-24 last">
+        <img id="header_logo" src="/static/images/fashion/logo.png" alt="Eurasia Fashion">
+    </div>
 </div>
 <hr>
 <div class="span-5" id="col1">
@@ -45,10 +46,13 @@
         <div class="sidebar-inner">
         {% if articles %}
             <h3>Latest News</h3>
-            {% for article in articles %}
-                <h4><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h4>
-                <p class="article-side-preview span-5 last">{{ article.article }}</p>
-            {% endfor %}
+            <ul class="circles">
+                {% for article in articles %}
+                <li><h4><a href="/news/show?id={{ article.key().id() }}">{{ article.title }}</a></h4></li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <h3>{{_('No recent articles')}}</h3>
         {% endif %}
         </div>
     </div>
@@ -56,10 +60,15 @@
         <div class="sidebar-inner">
         {% if events %}
             <h3>Upcoming Events</h3>
-            {% for event in events %}
-                <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date.strftime('%d-%m-%Y') }}</a></h4>
-                <span class="event-side-preview span-5 last">{{ event.title }}</span>
-            {% endfor %}
+            <div class="wrapper">
+                {% for event in events %}
+                    <h4><a href="/events/show?id={[ article.key().id() }}">{{ event.date.strftime('%d-%m-%Y') }}</a></h4>
+                    <span class="event-side-preview span-5 last">{{ event.title }}</span>
+                    <hr>
+                {% endfor %}
+            </div>
+        {% else %}
+            <h3>{{_('No recent events')}}</h3>
         {% endif %}
         </div>
     </div>

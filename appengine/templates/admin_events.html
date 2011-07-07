@@ -29,8 +29,7 @@ $(document).ready(function () {
         <tr>
             <th class="span-2">{{ _('Actions') }}</th>
             <th class="span-3">{{ _('Date') }}</th>
-            <th class="span-5">{{ _('Title') }}</th>
-            <th class="span-7 append-4 last">{{ _('Description') }}</th>
+            <th class="span-5 append-9">{{ _('Title') }}</th>
         </tr>
     </thead>
     <tbody>
@@ -39,7 +38,6 @@ $(document).ready(function () {
             <td><a class="del" href="/admin/events/delete?id={{ event.key().id() }}"></a></td>
             <td>{{ event.date.strftime('%m/%d/%Y') }}</td>
             <td>{{ event.title }}</td>
-            <td>{{ event.desc }}</td>
         </tr>
     {% endfor %}
     </tbody>

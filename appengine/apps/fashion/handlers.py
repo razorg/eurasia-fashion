@@ -193,6 +193,11 @@ class DeleteEventHandler(RequestHandler):
         event.delete()
         return self.redirect('/admin/events?del=1')
 
+class PartnersHandler(ServeBasics, Jinja2Mixin):
+    def get(self):
+        ServeBasics.get(self)
+        return self.render_response('partners.html', **self.context)
+
 class DeleteArticleHandler(RequestHandler):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
     def get(self):
@@ -205,12 +210,11 @@ class DeleteArticleHandler(RequestHandler):
         article.delete()
         return self.redirect('/admin/articles?del=1')
 
-class ShowEventsHandler(RequestHandler, Jinja2Mixin):
+class ShowEventsHandler(ServeBasics, Jinja2Mixin):
     def get(self):
-        context = {
-            'events' : Event.all().fetch(300)
-        }
-        return self.render_response('events.html', **context);
+        ServeBasics.get(self)
+        self.context['events'] =  Event.all().fetch(300)
+        return self.render_response('events.html', **self.context);
         
 class GetDocHandler(RequestHandler, Jinja2Mixin):
     middleware = ['tipfy.auth.LoginRequiredMiddleware']
@@ -240,7 +244,7 @@ class ShowArticleHandler(ServeBasics, Jinja2Mixin):
             return Response('no article found')
         
         self.context['article'] = article
-        self.render_response('article.html', **self.context)
+        return self.render_response('article.html', **self.context)
 
 class NewsHandler(ServeBasics, Jinja2Mixin):
     def get(self):
