@@ -28,11 +28,15 @@ $(document).ready(function() {
         <input type="text" name="title" id="title">
     <p>
         <label class="span-19 last" for="desc">Event description in English</label>
-        <textarea class="ckeditor" name="desc" id="desc"></textarea>
+        <div class="clear"></div>
+        <textarea class="editor" name="desc" id="desc"></textarea>
+        <div class="clear"></div>
     </p>
     <p>
         <label class="span-19 last" for="desc">Event description in Russian</label>
-        <textarea class="ckeditor" name="desc_ru" id="desc_ru"></textarea>
+        <div class="clear"></div>
+        <textarea class="editor" name="desc_ru" id="desc_ru"></textarea>
+        <div class="clear"></div>
     </p>
 </fieldset>
 <input type="submit" value="{{ _('Submit') }}">

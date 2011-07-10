@@ -29,6 +29,10 @@ $(document).ready(function() {
         fix(en);
     else if (lang == 'ru_RU')
         fix(ru);
+    
+    $('.editor').each(function() {
+            CKEDITOR.replace(this.id, {});
+    });
 });
 
 $(window).load(function() {

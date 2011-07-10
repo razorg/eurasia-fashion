@@ -26,11 +26,15 @@
         </p>
         <p>
             <label class="span-19 last" for="desc">{{ _('Document description in English') }}</label>
-            <textarea class="ckeditor" id="desc" name="desc"></textarea>
+            <div class="clear"></div>
+            <textarea class="editor" id="desc" name="desc"></textarea>
+            <div class="clear"></div>
         </p>
         <p>
             <label class="span-19 last" for="desc">{{ _('Document description in Russian') }}</label>
-            <textarea class="ckeditor" id="desc_ru" name="desc_ru"></textarea>
+            <div class="clear"></div>
+            <textarea class="editor" id="desc_ru" name="desc_ru"></textarea>
+            <div class="clear"></div>
         </p>
         <p>
             <label class="span-19 last" for="file">{{ _('File') }}</label>
@@ -39,4 +43,5 @@
         <p><input type="submit" value="{{ _('Submit') }}"></p>
     </fieldset>
 </form>
+
 {% endblock %}

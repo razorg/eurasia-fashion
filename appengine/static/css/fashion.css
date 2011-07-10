@@ -83,6 +83,8 @@ body {
 }
 #flags img {
     border:1px solid black;
+    width:60px;
+    height:40px;
 }
 #last_col {
     margin-bottom:25px;
@@ -171,7 +173,7 @@ ul.presentation li h3 {
 ul.presentation p {
     margin-top:8px;
 }
-ul.vmenu {
+ul.vmenu {               
     padding-left:0px;
 }
 ul.vmenu li {
